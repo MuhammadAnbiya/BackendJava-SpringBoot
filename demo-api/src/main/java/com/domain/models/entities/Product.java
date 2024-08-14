@@ -1,4 +1,4 @@
-package com.demo.models.entities;
+package com.domain.models.entities;
 
 import java.io.Serializable;
 
@@ -22,7 +22,7 @@ public class Product implements Serializable {
     @Column(name = "product_name", length = 100)
     private String name;
 
-    @Column(name = "product_description", length = 500)
+    @Column(name = "product_desc", length = 500)
     private String description;
 
     @Column(name = "price")

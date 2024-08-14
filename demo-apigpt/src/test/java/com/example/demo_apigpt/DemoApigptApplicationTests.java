@@ -1,10 +1,10 @@
-package com.demo.demo_api;
+package com.example.demo_apigpt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApiApplicationTests {
+class DemoApigptApplicationTests {
 
 	@Test
 	void contextLoads() {

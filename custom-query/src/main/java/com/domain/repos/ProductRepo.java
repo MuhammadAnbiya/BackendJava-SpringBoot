@@ -13,5 +13,4 @@ public interface ProductRepo extends CrudRepository<Product, Long> {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'finProductByName'");
     }
-
 }

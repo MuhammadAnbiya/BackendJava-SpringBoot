@@ -1,45 +1,48 @@
-package com.domain.models.entities;
+package com.demo.models.entities;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 
-
 @Entity
 @Table(name = "tbl_product")
-public class Product implements Serializable{
+public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "product_name", length = 100)
     private String name;
 
+    @Column(name = "product_description", length = 500)
     private String description;
 
-    private double prices;
+    @Column(name = "price")
+    private double price;
 
     public Product() {
     }
 
-    public Product(Long id, String name, String description, double prices) {
+    public Product(long id, String name, String description, double price) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.prices = prices;
+        this.price = price;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -59,15 +62,11 @@ public class Product implements Serializable{
         this.description = description;
     }
 
-    public double getPrices() {
-        return prices;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPrices(double prices) {
-        this.prices = prices;
+    public void setPrice(double price) {
+        this.price = price;
     }
-
-    
-
-    
 }

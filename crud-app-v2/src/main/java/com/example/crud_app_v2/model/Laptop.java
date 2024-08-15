@@ -1,4 +1,4 @@
-package com.example.crud_app.model;
+package com.example.crud_app_v2.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,21 +12,19 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="Mahasiswa")
+@Table(name = "laptop")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class Mahasiswa {
-    
+public class Laptop {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private String nama;
-
-    private String nim;
-
-    private String gender;
+    private String brand;
+    private String model;
+    private double price;
 }

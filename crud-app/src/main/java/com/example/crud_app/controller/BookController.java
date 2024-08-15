@@ -56,7 +56,7 @@ public class BookController {
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
         Book bookObj = bookRepo.save(book);
 
-        return new ResponseEntity<>(bookObj, HttpStatus.OK);    
+        return ResponseEntity.status(HttpStatus.CREATED).body(bookObj);    
     }
 
     @PostMapping("/updateBookById/{id}")

@@ -1,19 +1,22 @@
-import org.springframework.web.bind.annotation.RestController;
+package com.example.crud_app.controller;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.http.HttpStatus;
 
 import com.example.crud_app.model.Book;
 import com.example.crud_app.model.Mahasiswa;
 import com.example.crud_app.repo.BookRepo;
 import com.example.crud_app.repo.MahasiswaRepo;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
+@RequestMapping("/api")
 public class CombinedController {
 
     @Autowired
@@ -28,10 +31,9 @@ public class CombinedController {
             List<Book> bookList = bookRepo.findAll();
             List<Mahasiswa> mahasiswaList = mahasiswaRepo.findAll();
     
-            Map<String, Object> response = Map.of(
-                "books", bookList,
-                "mahasiswa", mahasiswaList
-            );
+            Map<String, Object> response = new HashMap<>();
+            response.put("mahasiswa", mahasiswaList);
+            response.put("book", bookList);
     
             return ResponseEntity.ok(response);
     
@@ -40,6 +42,29 @@ public class CombinedController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
+    @PostMapping("/addBook")
+    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+
+        try {
+            Book bookObj = bookRepo.save(book);
+            return ResponseEntity.status(HttpStatus.CREATED).body(bookObj);
+        } catch (Exception ex) {
+            ex.printStackTrace(); // Cetak stack trace untuk debugging
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
     
+    @PostMapping("/addMahasiswa")
+    public ResponseEntity<Mahasiswa> addBook(@RequestBody Mahasiswa mahasiswa) {
+        
+        try {
+            Mahasiswa mahasiswaObj = mahasiswaRepo.save(mahasiswa);
+            return ResponseEntity.status(HttpStatus.CREATED).body(mahasiswaObj);
+        } catch (Exception ex) {
+            ex.printStackTrace(); // Cetak stack trace untuk debugging
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
     
 }

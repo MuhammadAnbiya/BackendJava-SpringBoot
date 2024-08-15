@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api")
 public class CombinedController {
 
     @Autowired
@@ -42,29 +41,4 @@ public class CombinedController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
-    @PostMapping("/addBook")
-    public ResponseEntity<Book> addBook(@RequestBody Book book) {
-
-        try {
-            Book bookObj = bookRepo.save(book);
-            return ResponseEntity.status(HttpStatus.CREATED).body(bookObj);
-        } catch (Exception ex) {
-            ex.printStackTrace(); // Cetak stack trace untuk debugging
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
-    
-    @PostMapping("/addMahasiswa")
-    public ResponseEntity<Mahasiswa> addBook(@RequestBody Mahasiswa mahasiswa) {
-        
-        try {
-            Mahasiswa mahasiswaObj = mahasiswaRepo.save(mahasiswa);
-            return ResponseEntity.status(HttpStatus.CREATED).body(mahasiswaObj);
-        } catch (Exception ex) {
-            ex.printStackTrace(); // Cetak stack trace untuk debugging
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
-    
 }

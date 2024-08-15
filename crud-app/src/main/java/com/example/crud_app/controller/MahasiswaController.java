@@ -41,7 +41,6 @@ public class MahasiswaController {
     @PostMapping("/addMahasiswa")
     public ResponseEntity<Mahasiswa> addBook(@RequestBody Mahasiswa mahasiswa) {
         Mahasiswa mahasiswaObj = mahasiswaRepo.save(mahasiswa);
-        
         return ResponseEntity.status(HttpStatus.CREATED).body(mahasiswaObj);  
     }
 }

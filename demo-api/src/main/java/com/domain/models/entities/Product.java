@@ -17,26 +17,29 @@ public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(name = "product_name", length = 100)
     private String name;
 
-    @Column(name = "product_desc", length = 500)
+    @Column(name = "product_description", length = 500)
     private String description;
 
-    @Column(name = "price")
     private double price;
 
+    // Default constructor
     public Product() {
     }
 
+    // Constructor with parameters
     public Product(long id, String name, String description, double price) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
     }
+
+    // Getters and setters
 
     public long getId() {
         return id;

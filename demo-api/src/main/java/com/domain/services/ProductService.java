@@ -40,4 +40,8 @@ public class ProductService {
     public List<Product> findByName(String name){     // class untuk mencari product berdasarkan namanya
         return productRepo.findByNameContains(name);
     }
+
+    public void removeAll(){ // class untuk menghapus product secara keseluruhan
+        productRepo.deleteAll();
+    }
 }

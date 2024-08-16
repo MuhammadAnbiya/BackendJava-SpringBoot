@@ -87,10 +87,16 @@ public class ProductController {
     }
 
 
-    // Endpoint untuk menghapus product
+    // Endpoint untuk menghapus product dari Id nya
     @DeleteMapping("/{id}")
     public void removeOne(@PathVariable("id") Long id){
         productService.removeOne(id);
+    }
+
+    // Endpoint untuk menghapus semua product
+    @DeleteMapping
+    public void deleteAll(){
+        productService.removeAll();
     }
 
     // Endpoint untuk mencari product dari namanya

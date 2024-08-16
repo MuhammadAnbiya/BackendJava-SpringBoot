@@ -1,6 +1,7 @@
 package com.domain.models.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +10,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 @Table(name = "tbl_product") // nama table yang akan muncul di database
@@ -29,6 +34,15 @@ public class Product implements Serializable {
     private String description;
 
     private double price; // private = aksesibilitas, double = type data primitive untuk desimal, price nama dari variabel
+
+    @ManyToOne
+    private Category category;
+
+    @ManyToMany
+    @JoinTable(name= "tbl_product_supplier",
+    joinColumns = @JoinColumn(name= "product_id"),
+    inverseJoinColumns = @JoinColumn(name= "supplier_id"))
+    private Set<Supplier> suppliers;
 
     // Default constructor
     public Product() {
@@ -74,4 +88,14 @@ public class Product implements Serializable {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    
 }

@@ -1,8 +1,11 @@
 package com.domain.services;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Optional;
 
+=======
+>>>>>>> 15c1a6e (lastpush 16/8 - create supplier, category repo and service)
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +19,17 @@ import jakarta.transaction.TransactionScoped;
 public class SupplierService {
 
     @Autowired
+<<<<<<< HEAD
     private SupplierRepo supplierRepo;
+=======
+    public SupplierRepo supplierRepo;
+>>>>>>> 15c1a6e (lastpush 16/8 - create supplier, category repo and service)
 
     public Supplier save(Supplier supplier){
         return supplierRepo.save(supplier);
     }
 
+<<<<<<< HEAD
     public Supplier findOne(Long id){
         Optional <Supplier> supplier = supplierRepo.findById(id);
         if(!supplier.isPresent()){
@@ -63,3 +71,8 @@ public class SupplierService {
     }
 }
 
+=======
+    
+
+}
+>>>>>>> 15c1a6e (lastpush 16/8 - create supplier, category repo and service)

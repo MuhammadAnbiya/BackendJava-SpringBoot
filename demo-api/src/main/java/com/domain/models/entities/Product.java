@@ -11,24 +11,24 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "tbl_product")
+@Table(name = "tbl_product") // nama table yang akan muncul di database
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Id // id dari database nya
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // yang bikin jadi auto increment
+    private long id; // private = aksesibilitas, long = type data primitive yg lebih panjang dari int, id nama dari variabel
 
-    @NotEmpty(message = "Name is Required")
-    @Column(name = "product_name", length = 100)
-    private String name;
+    @NotEmpty(message = "Name is Required") // logic agar si entitinya ngga boleh kosong, nanti ada pesannya di "message"
+    @Column(name = "product_name", length = 100) // keterangan dari entitinya
+    private String name; // private = aksesibilitas, String = type data primitive yg untuk huruf, name nama dari variabel
 
-    @NotEmpty(message = "Description is Required")
+    @NotEmpty(message = "Description is Required") 
     @Column(name = "product_description", length = 500)
     private String description;
 
-    private double price;
+    private double price; // private = aksesibilitas, double = type data primitive untuk desimal, price nama dari variabel
 
     // Default constructor
     public Product() {
@@ -43,7 +43,6 @@ public class Product implements Serializable {
     }
 
     // Getters and setters
-
     public long getId() {
         return id;
     }

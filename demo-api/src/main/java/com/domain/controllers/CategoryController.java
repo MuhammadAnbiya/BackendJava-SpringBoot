@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.dto.CategoryData;
@@ -32,22 +33,11 @@ public class CategoryController {
     private ModelMapper modelMapper;
 
     @PostMapping
-    public ResponseEntity<ResponseData<Category>> create(@Valid @RequestBody CategoryData categoryData, Errors errors) {
+    public ResponseEntity<ResponseData<Category>> create(@Valid @RequestBody CategoryData categoryData, Errors errors){
+        
+    ResponseData<Category> responseData = new responseData<>();
 
-        ResponseData<Category> responseData = new ResponseData<>();
 
-        if (errors.hasErrors()) {
-            for (ObjectError error : errors.getAllErrors()) {
-                responseData.getMessages().add(error.getDefaultMessage());
-            }
-            responseData.setStatus(false);
-            responseData.setPayload(null);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-        Category category = modelMapper.map(categoryData, Category.class);
-        responseData.setStatus(true);
-        responseData.setPayload(categoryService.save(category));
-        return ResponseEntity.ok(responseData);
     }
 
     @GetMapping
@@ -79,4 +69,5 @@ public class CategoryController {
     return ResponseEntity.ok(responseData);
     }
 }
+
 

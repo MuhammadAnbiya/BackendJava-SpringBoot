@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 public class CategoryData {
     
-    @NotEmpty(message= "Name is required")
+    @NotEmpty(message = "Name is required")
     private String name;
 
     public String getName() {
@@ -16,5 +16,4 @@ public class CategoryData {
     }
 
     
-
 }

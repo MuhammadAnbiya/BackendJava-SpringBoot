@@ -15,7 +15,7 @@ import jakarta.transaction.TransactionScoped;
 public class SupplierService {
 
     @Autowired
-    public SupplierRepo supplierRepo;
+    private SupplierRepo supplierRepo;
 
     public Supplier save(Supplier supplier){
         return supplierRepo.save(supplier);
@@ -33,7 +33,7 @@ public class SupplierService {
         return supplierRepo.findAll();
     }
 
-    public void deleteById(Long id){
+    public void removeOne(Long id){
         supplierRepo.deleteById(id);
     }
 }

@@ -5,14 +5,14 @@ import jakarta.validation.constraints.NotEmpty;
 
 public class SupplierData {
     
-    @NotEmpty(message= "Name is Required")
+    @NotEmpty(message = "Name is required")
     private String name;
 
-    @NotEmpty(message= "Address is Required")
+    @NotEmpty(message = "Address is required")
     private String address;
-    
-    @NotEmpty(message= "Email is Required")
-    @Email(message = "Email is not Valid")
+
+    @NotEmpty(message = "Email is required")
+    @Email(message = "Email is not valid")
     private String email;
 
     public String getName() {
@@ -23,14 +23,6 @@ public class SupplierData {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -39,6 +31,13 @@ public class SupplierData {
         this.address = address;
     }
 
-    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     
 }

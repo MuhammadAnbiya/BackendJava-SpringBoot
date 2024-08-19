@@ -45,13 +45,6 @@ public class SupplierController {
         }
 
         Supplier supplier = modelMapper.map(supplierData, Supplier.class);
-    
-
-        // Supplier supplier = new Supplier();
-        // supplier.setName(supplierData.getName());
-        // supplier.setAdress(supplierData.getAddress());
-        // supplier.setEmail(supplierData.getEmail());
-
         responseData.setStatus(true);
         responseData.setPayload(supplierService.save(supplier));
         return ResponseEntity.ok(responseData);

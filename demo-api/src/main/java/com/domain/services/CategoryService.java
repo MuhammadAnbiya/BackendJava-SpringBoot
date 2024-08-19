@@ -23,7 +23,6 @@ public class CategoryService {
 
     public Category findOne(Long id) {
         Optional<Category> category = categoryRepo.findById(id);
-
         if (!category.isPresent()) {
             return null;
         }
@@ -34,7 +33,7 @@ public class CategoryService {
         return categoryRepo.findAll();
     }
 
-    public void deleteById(Long id) {
+    public void removeOne(Long id) {
         categoryRepo.deleteById(id);
     }
 

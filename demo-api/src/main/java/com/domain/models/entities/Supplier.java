@@ -25,7 +25,7 @@ public class Supplier implements Serializable{
     private String name;
 
     @Column(length = 200, nullable = false)
-    private String adress;
+    private String address;
 
     @Column(length = 100, nullable = false, unique = true)
     private String email;
@@ -50,11 +50,11 @@ public class Supplier implements Serializable{
     }
 
     public String getAdress() {
-        return adress;
+        return address;
     }
 
     public void setAdress(String adress) {
-        this.adress = adress;
+        this.address = adress;
     }
 
     public String getEmail() {

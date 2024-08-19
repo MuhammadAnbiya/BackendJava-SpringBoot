@@ -15,7 +15,7 @@ import jakarta.transaction.TransactionScoped;
 public class CategoryService {
 
     @Autowired
-    public CategoryRepo categoryRepo;
+    private CategoryRepo categoryRepo;
 
     public Category save(Category category) {
         return categoryRepo.save(category);

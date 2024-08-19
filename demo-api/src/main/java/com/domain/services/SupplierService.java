@@ -1,5 +1,7 @@
 package com.domain.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,20 @@ public class SupplierService {
         return supplierRepo.save(supplier);
     }
 
-    
+    public Supplier findOne(Long id){
+        Optional <Supplier> supplier = supplierRepo.findById(id);
+        if(!supplier.isPresent()){
+            return null;
+        }
+        return supplier.get();
+    }
 
+    public Iterable<Supplier> findAll(){
+        return supplierRepo.findAll();
+    }
+
+    public void deleteById(Long id){
+        supplierRepo.deleteById(id);
+    }
 }
+

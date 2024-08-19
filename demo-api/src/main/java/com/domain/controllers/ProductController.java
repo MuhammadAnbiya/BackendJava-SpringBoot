@@ -35,7 +35,7 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<ResponseData<Product>> create(@Valid @RequestBody Product product, Errors errors){
     // @ResponseEntitiy adalah sebuah kelas yang digunakan dalam Spring untuk membangun respons HTTP
-    // @ResponseData  merupakan kelas custom untuk membangun respons yang lebih terstruktur (di file DTO)
+    // @ResponseData  merupakan kelas custom untuk membangun respons yang lebih terstruktur (di file DTO) --> data transfer object
     // @Valid Anotasi ini digunakan untuk mengaktifkan validasi pada objek product sebelum method dieksekusi
     // Product product Parameter method ini yang berisi data produk yang dikirim oleh klien dalam body permintaan HTTP
     // Errors errors Parameter untuk menangani dan menyimpan informasi kesalahan validasi yang terjadi selama proses validasi.

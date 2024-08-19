@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.dto.ResponseData;
-import com.domain.dto.SupplierData;
 import com.domain.models.entities.Product;
 import com.domain.models.entities.Supplier;
 import com.domain.services.ProductService;

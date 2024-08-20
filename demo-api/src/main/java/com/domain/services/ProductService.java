@@ -46,12 +46,12 @@ public class ProductService {
         productRepo.deleteAll();
     }
 
-    public void addSupplier(Supplier supplier, Long productId){
-        Product product = findOne(productId);
+    public void addSupplier(Supplier supplier, Long productId){ // mencari product dari productId nya
+        Product product = findOne(productId); 
         if(product==null){
-            throw new RuntimeException("Product with ID: "+productId+ " not found");
+            throw new RuntimeException("Product with ID: "+productId+ " not found"); // kalau gagal dikirim error pake throw
         }
-        product.getSuppliers().add(supplier);
+        product.getSuppliers().add(supplier); // kalau ngga di tambahin supplier nya
         save(product);
     }
 }

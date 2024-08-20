@@ -73,8 +73,15 @@ public class SupplierController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
 
-        Supplier supplier = modelMapper.map(supplierData, Supplier.class);
 
+        // ADA 2 CARA PEMETAAN DATA : 
+        
+        // Supplier supplier = new Supplier();
+        // supplier.setName(supplierData.getName());
+        // supplier.setAddress(supplierData.getAddress());
+        // supplier.setEmail(supplierData.getEmail());
+
+        Supplier supplier = modelMapper.map(supplierData, Supplier.class);
         responseData.setStatus(true);
         responseData.setPayload(supplierService.save(supplier));
         return ResponseEntity.ok(responseData);

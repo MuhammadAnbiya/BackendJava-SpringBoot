@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
+import java.util.ArrayList;
 
 import com.domain.models.entities.Product;
 import com.domain.models.entities.Supplier;
@@ -17,6 +18,9 @@ public class ProductService {
 
     @Autowired // anotasi untuk injeksi dependensi 
     private ProductRepo productRepo; // jadi class ProductRepo di deklarasikan sebagai productRepo untuk memanggil logicnya
+
+    @Autowired
+    private SupplierService supplierService;
 
     public Product save(Product product){  // class untuk method create di controller yg memanggil method save dari productRepo
         return productRepo.save(product);
@@ -61,5 +65,13 @@ public class ProductService {
 
     public List<Product> findProductByCategory(Long categoryId){
         return productRepo.findProductByCategory(categoryId);
+    }
+
+    public List<Product> findBySupplier(Long supplierId){
+        Supplier supplier = supplierService.findOne(supplierId);
+        if (supplier == null) {
+            return new ArrayList<Product>();
+        }
+        return productRepo.findProductBySupplier(supplier);
     }
 }

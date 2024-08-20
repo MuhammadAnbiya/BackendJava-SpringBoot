@@ -121,7 +121,12 @@ public class ProductController {
     }
 
     @GetMapping("/search/category/{categoryId}")
-    public List<Product> getProductsByCategory(@PathVariable("categoryId") Long categoryId) {
+    public List<Product> getProductByCategory(@PathVariable("categoryId") Long categoryId) {
         return productService.findProductByCategory(categoryId);
+    }
+
+    @GetMapping("/search/supplier/{supplierId}")
+    public List<Product> getProductBySupplier(@PathVariable("supplierId") Long supplierId){
+        return productService.findBySupplier(supplierId);
     }
 }

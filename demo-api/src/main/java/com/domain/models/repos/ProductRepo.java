@@ -1,6 +1,8 @@
 package com.domain.models.repos;
 
 import com.domain.models.entities.Product;
+import com.domain.models.entities.Supplier;
+
 import java.util.List;
 import jakarta.websocket.server.PathParam;
 
@@ -16,4 +18,7 @@ public interface ProductRepo extends CrudRepository<Product, Long> { // mengguna
 
     @Query("SELECT p FROM Product p WHERE p.category.id = :categoryId")
     public List<Product> findProductByCategory(@PathParam("categoryId") Long categoryId);
+
+    @Query("SELECT p FROM Product p WHERE :supplier MEMBER OF p.suppliers")
+    public List<Product> findProductBySupplier(@PathParam("supplier") Supplier supplier);
 }

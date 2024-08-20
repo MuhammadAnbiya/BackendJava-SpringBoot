@@ -116,7 +116,12 @@ public class ProductController {
     }
 
     @PostMapping("/search/namelike")
-    public List<Product> getProductByNameLike(@RequestBody SearchData searchData){
+    public List<Product> getProductByNameLike(@RequestBody SearchData searchData) {
         return productService.findProductByNameLike(searchData.getSearchKey());
+    }
+
+    @GetMapping("/search/category/{categoryId}")
+    public List<Product> getProductsByCategory(@PathVariable("categoryId") Long categoryId) {
+        return productService.findProductByCategory(categoryId);
     }
 }

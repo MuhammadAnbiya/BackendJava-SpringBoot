@@ -73,7 +73,6 @@ public class SupplierController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
 
-
         // ADA 2 CARA PEMETAAN DATA : 
         
         // Supplier supplier = new Supplier();

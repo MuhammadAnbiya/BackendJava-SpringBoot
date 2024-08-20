@@ -1,7 +1,6 @@
 package com.domain.controllers;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.dto.ResponseData;
+import com.domain.dto.SearchData;
 import com.domain.models.entities.Product;
 import com.domain.models.entities.Supplier;
 import com.domain.services.ProductService;
@@ -104,14 +104,19 @@ public class ProductController {
         productService.removeAll();
     }
 
-    // Endpoint untuk mencari product dari namanya
-    @GetMapping("/name/{name}") // perlu diperhatikan agar endpoint tidak error harus unik dan berbeda
-    public List<Product> findByName(@PathVariable("name") String name) {
-        return productService.findByName(name);
-    }
-
     @PostMapping("/{id}")
     public void addSupplier(@RequestBody Supplier supplier, @PathVariable("id") Long productId) {
         productService.addSupplier(supplier, productId);
+    }
+
+    // Endpoint untuk mencari product dari namanya
+    @PostMapping("/search/name") // perlu diperhatikan agar endpoint tidak error harus unik dan berbeda
+    public Product getProductByName(@RequestBody SearchData searchData) {
+        return productService.findByProductName(searchData.getSearchKey());
+    }
+
+    @PostMapping("/search/namelike")
+    public List<Product> getProductByNameLike(@RequestBody SearchData searchData){
+        return productService.findProductByNameLike(searchData.getSearchKey());
     }
 }

@@ -1,11 +1,11 @@
 package com.domain.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
 import com.domain.models.entities.Product;
 import com.domain.models.entities.Supplier;
@@ -16,7 +16,7 @@ import com.domain.models.repos.ProductRepo;
 public class ProductService {
 
     @Autowired // anotasi untuk injeksi dependensi 
-    public ProductRepo productRepo; // jadi class ProductRepo di deklarasikan sebagai productRepo untuk memanggil logicnya
+    private ProductRepo productRepo; // jadi class ProductRepo di deklarasikan sebagai productRepo untuk memanggil logicnya
 
     public Product save(Product product){  // class untuk method create di controller yg memanggil method save dari productRepo
         return productRepo.save(product);
@@ -37,11 +37,7 @@ public class ProductService {
     public void removeOne(Long id){ // dia void karena untuk method delete
         productRepo.deleteById(id); // yang tidak akan mengembalikan apa apa jadi tidak pake return juga
     }
-
-    public List<Product> findByName(String name){     // class untuk mencari product berdasarkan namanya
-        return productRepo.findByNameContains(name);
-    }
-
+    
     public void removeAll(){ // class untuk menghapus product secara keseluruhan
         productRepo.deleteAll();
     }
@@ -53,5 +49,13 @@ public class ProductService {
         }
         product.getSuppliers().add(supplier); // kalau ngga di tambahin supplier nya
         save(product);
+    }
+
+    public Product findByProductName(String name){     // class untuk mencari product berdasarkan namanya
+        return productRepo.findProductByName(name);
+    }
+
+    public List<Product> findProductByNameLike(String name){
+        return productRepo.findProductByNameLike("%"+name+"%");
     }
 }

@@ -2,6 +2,9 @@ package com.domain.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.domain.dto.CategoryData;
 import com.domain.dto.ResponseData;
+import com.domain.dto.SearchData;
 import com.domain.models.entities.Category;
 import com.domain.services.CategoryService;
 
@@ -79,6 +83,22 @@ public class CategoryController {
         return ResponseEntity.ok(responseData);
     }
 
+    @PostMapping("/search/{size}/{page}")
+    public Iterable<Category> findByName(@RequestBody SearchData searchData, @PathVariable("size") int size, @PathVariable("page") int page){
+
+        Pageable pageable = PageRequest.of(page, size);
+        return categoryService.findByName(searchData.getSearchKey(), pageable);
+    }
+
+    @PostMapping("/search/{size}/{page}/{sort}")
+    public Iterable<Category> findByName(@RequestBody SearchData searchData, @PathVariable("size") int size, @PathVariable("page") int page, @PathVariable("sort") String sort){
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id")); // default ascending
+        if(sort.equalsIgnoreCase("desc")){
+            pageable = PageRequest.of(page, size, Sort.by("id").descending() );
+        }
+        return categoryService.findByName(searchData.getSearchKey(), pageable);
+    }
 
 }
 

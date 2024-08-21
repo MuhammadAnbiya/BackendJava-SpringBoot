@@ -17,7 +17,6 @@ public interface SupplierRepo extends CrudRepository<Supplier, Long>{
 
     List<Supplier> findByNameContains(String name);
 
-
     List<Supplier> findByNameStartsWith(String prefix);
 
     List<Supplier> findByNameContainsOrEmailContains(String name, String email);

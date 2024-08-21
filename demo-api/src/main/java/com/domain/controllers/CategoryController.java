@@ -1,5 +1,7 @@
 package com.domain.controllers;
 
+import java.util.Arrays;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -99,7 +101,16 @@ public class CategoryController {
         }
         return categoryService.findByName(searchData.getSearchKey(), pageable);
     }
+    
+    @PostMapping("/batch")
+    public ResponseEntity<ResponseData<Iterable<Category>>> saveBatch(@RequestBody Category[] categories){
 
+        ResponseData<Iterable<Category>> responseData = new ResponseData<>();
+        responseData.setPayload(categoryService.saveBatch(Arrays.asList(categories)));
+        responseData.setStatus(true);
+        return ResponseEntity.ok(responseData);
+        
+    }
 }
 
 

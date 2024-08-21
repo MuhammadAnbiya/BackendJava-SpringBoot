@@ -20,5 +20,7 @@ public interface CategoryRepo extends PagingAndSortingRepository<Category, Long>
     
     Page<Category> findByNameContains(String name, Pageable pageable);
 
-    
+    Iterable<Category> saveAll(Iterable<Category> categories);
+
+
 }

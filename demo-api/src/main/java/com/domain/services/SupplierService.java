@@ -45,5 +45,13 @@ public class SupplierService {
     public List<Supplier> findSupplierByEmailLike(String email){
         return supplierRepo.findSupplierByEmailLike("%"+email+"%");
     }
+
+    public List<Supplier> findByNameContais(String name){
+        return supplierRepo.findByNameContains(name);
+    }
+
+    public List<Supplier> findByNameStartsWith(String prefix){
+        return supplierRepo.findByNameStartsWith(prefix);
+    }
 }
 

@@ -13,6 +13,13 @@ public interface SupplierRepo extends CrudRepository<Supplier, Long>{
     
     Supplier findByEmail(String email);
 
+    List<Supplier> findByNameContains(String name);
+
+    List<Supplier> findByNameStartsWith(String prefix);
+
     @Query("SELECT p FROM Supplier p WHERE p.email LIKE :email")
     public List<Supplier> findSupplierByEmailLike(@PathParam("email") String email);
+
+
+
 }

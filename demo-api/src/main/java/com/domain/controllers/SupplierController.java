@@ -98,4 +98,14 @@ public class SupplierController {
     public List<Supplier> getSupplierByEmailLike(@RequestBody SearchData searchData){
         return supplierService.findSupplierByEmailLike(searchData.getSearchKey());
     }
+
+    @PostMapping("/search/byname")
+    public List<Supplier> getByNameContains(@RequestBody SearchData searchData){
+        return supplierService.findByNameContais(searchData.getSearchKey());
+    }
+
+    @PostMapping("/search/namestarswith")
+    public List<Supplier> getNameStartsWith(@RequestBody SearchData searchData){
+        return supplierService.findByNameStartsWith(searchData.getSearchKey());
+    }
 }

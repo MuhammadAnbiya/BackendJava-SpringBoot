@@ -1,5 +1,6 @@
 package com.domain.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,14 @@ public class SupplierService {
 
     public void removeOne(Long id){
         supplierRepo.deleteById(id);
+    }
+
+    public Supplier findByEmail(String email){
+        return supplierRepo.findByEmail(email);
+    }
+
+    public List<Supplier> findSupplierByEmailLike(String email){
+        return supplierRepo.findSupplierByEmailLike("%"+email+"%");
     }
 }
 

@@ -109,7 +109,6 @@ public class CategoryController {
         responseData.setPayload(categoryService.saveBatch(Arrays.asList(categories)));
         responseData.setStatus(true);
         return ResponseEntity.ok(responseData);
-        
     }
 }
 

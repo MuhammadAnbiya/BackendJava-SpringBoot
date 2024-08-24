@@ -27,9 +27,9 @@ import jakarta.validation.constraints.NotEmpty;
 //     property = "id")
 public class Product implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L; 
 
-    @Id // id dari database nya
+    @Id // id dari table nya
     @GeneratedValue(strategy = GenerationType.IDENTITY) // yang bikin jadi auto increment
     private long id; // private = aksesibilitas, long = type data primitive yg lebih panjang dari int, id nama dari variabel
 
@@ -44,7 +44,7 @@ public class Product implements Serializable {
     private double price; // private = aksesibilitas, double = type data primitive untuk desimal, price nama dari variabel
 
     @ManyToOne
-    private Category category;
+    private Category category; // artinya satu category bisa memiliki banyak jenis produk
 
     @ManyToMany
     @JoinTable(

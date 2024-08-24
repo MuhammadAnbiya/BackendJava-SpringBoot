@@ -23,7 +23,7 @@ public class AppUser implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     @Column(length = 150, nullable = false)
     private String fullname;
     @Column(length = 150, nullable = false, unique = true)
@@ -36,7 +36,7 @@ public class AppUser implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
-        return Collections.singleton(authority);
+        return Collections.singletonList(authority);
     }
 
     @Override
@@ -69,11 +69,11 @@ public class AppUser implements UserDetails {
         return true;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -105,5 +105,6 @@ public class AppUser implements UserDetails {
         this.appUserRole = appUserRole;
     }
 
+    
     
 }

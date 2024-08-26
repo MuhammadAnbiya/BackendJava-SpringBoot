@@ -1,13 +1,15 @@
-    package com.domain.models.repos;
+    // package com.domain.models.repos;
 
-    import java.util.Optional;
+    // import java.util.Optional;
 
-    import org.springframework.data.repository.PagingAndSortingRepository;
+    // import org.springframework.data.repository.PagingAndSortingRepository;
 
-    import com.domain.models.entities.AppUser;
+    // import com.domain.models.entities.AppUser;
 
-    public interface AppUserRepo extends PagingAndSortingRepository<AppUser, Long> {
+    // public interface AppUserRepo extends PagingAndSortingRepository<AppUser, Long> {
 
-        Optional<AppUser> findByEmail(String email);
+    //     Optional<AppUser> findByEmail(String email);
+
+    //     AppUser save(AppUser user);
         
-    }
+    // }

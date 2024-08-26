@@ -1,16 +1,12 @@
 package com.domain.models.repos;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
-=======
->>>>>>> 15c1a6e (lastpush 16/8 - create supplier, category repo and service)
 import org.springframework.data.repository.CrudRepository;
 
 import com.domain.models.entities.Supplier;
 
-<<<<<<< HEAD
 import jakarta.websocket.server.PathParam;
 
 public interface SupplierRepo extends CrudRepository<Supplier, Long>{
@@ -30,8 +26,4 @@ public interface SupplierRepo extends CrudRepository<Supplier, Long>{
 
 
 
-=======
-public interface SupplierRepo extends CrudRepository<Supplier, Long>{
-    
->>>>>>> 15c1a6e (lastpush 16/8 - create supplier, category repo and service)
 }

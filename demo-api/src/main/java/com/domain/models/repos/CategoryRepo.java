@@ -1,6 +1,5 @@
 package com.domain.models.repos;
 
-<<<<<<< HEAD
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -24,12 +23,4 @@ public interface CategoryRepo extends PagingAndSortingRepository<Category, Long>
     Iterable<Category> saveAll(Iterable<Category> categories);
 
 
-=======
-import org.springframework.data.repository.CrudRepository;
-
-import com.domain.models.entities.Category;
-
-public interface CategoryRepo extends CrudRepository<Category, Long> {
-    
->>>>>>> 15c1a6e (lastpush 16/8 - create supplier, category repo and service)
 }

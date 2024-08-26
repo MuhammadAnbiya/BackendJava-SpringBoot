@@ -32,4 +32,9 @@ public class ResponseData <T>{ // Kelas Generic untuk menghandle berbagai type d
     public void setPayload(T payload) {
         this.payload = payload;
     }
+
+    public Object getMassage() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMassage'");
+    }
 }

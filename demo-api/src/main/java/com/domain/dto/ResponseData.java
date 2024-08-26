@@ -12,29 +12,19 @@ public class ResponseData <T>{ // Kelas Generic untuk menghandle berbagai type d
     public boolean isStatus() {
         return status;
     }
-
     public void setStatus(boolean status) {
         this.status = status;
     }
-
     public List<String> getMessages() {
         return messages;
     }
-
     public void setMessages(List<String> messages) {
         this.messages = messages;
     }
-
     public T getPayload() {
         return payload;
     }
-
     public void setPayload(T payload) {
         this.payload = payload;
-    }
-
-    public Object getMassage() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getMassage'");
     }
 }

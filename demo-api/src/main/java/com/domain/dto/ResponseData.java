@@ -8,7 +8,7 @@ public class ResponseData <T>{ // Kelas Generic untuk menghandle berbagai type d
     private boolean status;
     private List<String> messages = new ArrayList<>();
     private T payload;
-
+    
     public boolean isStatus() {
         return status;
     }
@@ -27,4 +27,6 @@ public class ResponseData <T>{ // Kelas Generic untuk menghandle berbagai type d
     public void setPayload(T payload) {
         this.payload = payload;
     }
+
+    
 }

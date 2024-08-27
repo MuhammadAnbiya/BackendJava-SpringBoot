@@ -80,12 +80,12 @@
             <artifactId>modelmapper</artifactId>
             <version>2.3.5</version>
         </dependency>
-
-        <!-- <dependency>
+        
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency> -->
-
+        </dependency>
+        
     <!-- Kalau bisa ganti ke JetBrains Dulu -->
 
     </dependencies>

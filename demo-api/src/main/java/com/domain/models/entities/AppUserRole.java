@@ -1,5 +1,5 @@
-// package com.domain.models.entities;
+package com.domain.models.entities;
 
-// public enum AppUserRole {
-//     USER, ADMIN
-// }
+public enum AppUserRole {
+    USER, ADMIN
+}

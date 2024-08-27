@@ -10,6 +10,7 @@ import org.springframework.data.domain.AuditorAware;
 
 public class AuditorAwareImpl implements AuditorAware<String> {
 
+    @SuppressWarnings("null")
     @Override
     public Optional<String> getCurrentAuditor() {
         // Mendapatkan otentikasi dari SecurityContext

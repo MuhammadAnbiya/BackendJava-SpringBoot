@@ -1,6 +1,6 @@
 package com.domain.models.entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -15,10 +15,10 @@ import jakarta.persistence.TemporalType;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class BaseEntities<T> {
+public abstract class BaseEntities<T> {
     
     @CreatedBy
-    protected T CreatedBy;
+    protected T createdBy;
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
@@ -32,11 +32,11 @@ public class BaseEntities<T> {
     protected Date updateDate;
 
     public T getCreatedBy() {
-        return CreatedBy;
+        return createdBy;
     }
 
     public void setCreatedBy(T createdBy) {
-        CreatedBy = createdBy;
+        this.createdBy = createdBy;
     }
 
     public Date getCreatedDate() {
@@ -61,7 +61,5 @@ public class BaseEntities<T> {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
-    }
-
-    
+    }    
 }

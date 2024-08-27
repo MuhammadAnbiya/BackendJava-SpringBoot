@@ -16,29 +16,35 @@ import com.domain.services.AppUserService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
-
+    
     @Autowired
     private AppUserService appUserService;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-@SuppressWarnings("removal")
-@Bean
-public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http
-        .csrf(csrf -> csrf.disable()) // Disable CSRF
-        .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/api/users/register").permitAll() // Allow access to register endpoint
-            .anyRequest().authenticated() // All other requests need to be authenticated
-        )
-        .httpBasic(); // Enable HTTP Basic Authentication
+    // @Override
+    // protected void configure(HttpSecurity auth) throws exception {
+    //     http.csrf().disable()
+    //     .authorizeRequest().antMatchers("api/users/register").permitAll()
+    //     .anyRequest().fullyAuthenticated()
+    //     .and().httpBasic();
+    // }
 
-    return http.build();
-}
-
-
+    @SuppressWarnings("removal")
     @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http
+            .csrf(csrf -> csrf.disable()) // Disable CSRF
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/users/register").permitAll() // Allow access to register endpoint
+                .anyRequest().authenticated() // All other requests need to be authenticated
+            )
+            .httpBasic(); // Enable HTTP Basic Authentication
+
+        return http.build();
+    }
+        @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder = 
                 http.getSharedObject(AuthenticationManagerBuilder.class);
@@ -54,4 +60,19 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
         return provider;
     }
 
+    // @Override
+    // protected void configure(AuthenticationManagerBuilder auth) throws exception {
+    //     auth.authenticationProvider(daoAuthenticationProvider());
+    // }
+
+    // @Bean
+    // public DaoAuthenticationProvider daoAuthenticationProvider(){
+    //     DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+    //     provider.setPasswordEncoder(bCryptPasswordEncoder);
+    //     provider.setUserDetailsService(appUserService);
+    //     return provider;
+        
+    // }
+
 }
+

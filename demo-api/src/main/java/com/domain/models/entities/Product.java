@@ -31,7 +31,7 @@ public class Product implements Serializable {
 
     @Id // id dari table nya
     @GeneratedValue(strategy = GenerationType.IDENTITY) // yang bikin jadi auto increment
-    private long id; // private = aksesibilitas, long = type data primitive yg lebih panjang dari int, id nama dari variabel
+    private Long id; // private = aksesibilitas, long = type data primitive yg lebih panjang dari int, id nama dari variabel
 
     @NotEmpty(message = "Name is Required") // logic agar si entitinya ngga boleh kosong, nanti ada pesannya di "message"
     @Column(name = "product_name", length = 100) // keterangan dari entitinya
@@ -69,12 +69,12 @@ public class Product implements Serializable {
     }
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

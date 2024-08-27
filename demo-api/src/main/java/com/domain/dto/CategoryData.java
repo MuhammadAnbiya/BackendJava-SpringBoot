@@ -3,6 +3,8 @@ package com.domain.dto;
 import jakarta.validation.constraints.NotEmpty;
 
 public class CategoryData {
+
+    private Long id;
     
     @NotEmpty(message = "Name is required")
     private String name;
@@ -15,5 +17,14 @@ public class CategoryData {
         this.name = name;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    
     
 }

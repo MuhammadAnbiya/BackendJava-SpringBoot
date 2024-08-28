@@ -2,9 +2,9 @@ package com.domain.dto;
 
 public class SearchData {
 
-    private String searchKey;
+    private String searchKey; // DTO untuk menerima searchKey dari pengguna
 
-    private String otherSearchKey;
+    private String otherSearchKey; // DTO untuk menerima searchKey kedua dari pengguna (jika ada kasus pencarian lebih dari 1 variabel)
 
     public String getSearchKey() {
         return searchKey;

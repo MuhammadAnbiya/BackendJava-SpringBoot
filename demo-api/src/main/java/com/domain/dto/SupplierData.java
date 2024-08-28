@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 public class SupplierData {
     
-    @NotEmpty(message = "Name is required")
+    @NotEmpty(message = "Name is required") // Ini adalah error handling yang akan di berikan saat nama tidak diisi
     private String name;
 
     @NotEmpty(message = "Address is required")

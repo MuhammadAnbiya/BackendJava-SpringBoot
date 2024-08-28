@@ -5,10 +5,11 @@ import java.util.List;
 
 public class ResponseData <T>{ // Kelas Generic untuk menghandle berbagai type data
 
-    private boolean status;
-    private List<String> messages = new ArrayList<>();
-    private T payload;
+    private boolean status; // status yang akan cek nanti pada proses pemetaan data
+    private List<String> messages = new ArrayList<>(); // Array yang akan menampung error dan ditampilkan pada terminal nantinya
+    private T payload; // Type Generic artinya data bisa diisi dengan type data apa saja nantinya
     
+    // Setter Getter
     public boolean isStatus() {
         return status;
     }

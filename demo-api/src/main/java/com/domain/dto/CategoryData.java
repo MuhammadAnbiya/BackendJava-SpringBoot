@@ -6,9 +6,10 @@ public class CategoryData {
 
     private Long id;
     
-    @NotEmpty(message = "Name is required")
+    @NotEmpty(message = "Name is required") // Memberikan keterangan saat nama nya kosong
     private String name;
 
+    // Setter dan Getter
     public String getName() {
         return name;
     }

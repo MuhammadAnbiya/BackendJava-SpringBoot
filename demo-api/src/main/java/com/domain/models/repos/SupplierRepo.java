@@ -9,7 +9,7 @@ import com.domain.models.entities.Supplier;
 
 import jakarta.websocket.server.PathParam;
 
-public interface SupplierRepo extends CrudRepository<Supplier, Long>{
+public interface SupplierRepo extends CrudRepository<Supplier, Long>{ // Contoh Derived Query (Query yang sudah disediakan) dari CrudRepository
     
     Supplier findByEmail(String email);
 
@@ -17,7 +17,7 @@ public interface SupplierRepo extends CrudRepository<Supplier, Long>{
 
     List<Supplier> findByNameContains(String name);
 
-    List<Supplier> findByNameStartsWith(String prefix);
+    List<Supplier> findByNameStartsWith(String prefix); // Sebetulnya ini bisa String (apa saja) cuman agar semantik diganti dengan prefix
 
     List<Supplier> findByNameContainsOrEmailContains(String name, String email);
 

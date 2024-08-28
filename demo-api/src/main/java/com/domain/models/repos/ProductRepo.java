@@ -16,9 +16,9 @@ public interface ProductRepo extends CrudRepository<Product, Long> { // mengguna
     @Query("SELECT p FROM Product p WHERE p.name LIKE :name") //  untuk mencari nama yang mirip p.(entity) LIKE :entity
     public List<Product> findProductByNameLike(@PathParam("name") String name);
 
-    @Query("SELECT p FROM Product p WHERE p.category.id = :categoryId") // 
+    @Query("SELECT p FROM Product p WHERE p.category.id = :categoryId") // untuk mencari product dari category Id nya
     public List<Product> findProductByCategory(@PathParam("categoryId") Long categoryId);
 
-    @Query("SELECT p FROM Product p WHERE :supplier MEMBER OF p.suppliers")
+    @Query("SELECT p FROM Product p WHERE :supplier MEMBER OF p.suppliers") // untuk mencari supplier dari category Id nya
     public List<Product> findProductBySupplier(@PathParam("supplier") Supplier supplier);
 }

@@ -8,8 +8,8 @@
 
     public interface AppUserRepo extends PagingAndSortingRepository<AppUser, Long> {
 
-        Optional<AppUser> findByEmail(String email);
+        Optional<AppUser> findByEmail(String email); // Optional karena bisa jadi email nya tidak ditemukan
 
-        AppUser save(AppUser user);
+        AppUser save(AppUser user); // method untuk save user dari PagingAndSortingRepository
         
     }

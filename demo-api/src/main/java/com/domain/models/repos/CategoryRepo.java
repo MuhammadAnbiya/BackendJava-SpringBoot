@@ -8,7 +8,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.domain.models.entities.Category;
 
-public interface CategoryRepo extends PagingAndSortingRepository<Category, Long> {
+public interface CategoryRepo extends PagingAndSortingRepository<Category, Long> { // Derived Query dari PagingAndSortingRepository
 
     Category save(Category category);
 

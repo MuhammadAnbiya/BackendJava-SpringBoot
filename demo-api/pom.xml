@@ -86,8 +86,6 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         
-    <!-- Kalau bisa ganti ke JetBrains Dulu -->
-
     </dependencies>
 
     <build>

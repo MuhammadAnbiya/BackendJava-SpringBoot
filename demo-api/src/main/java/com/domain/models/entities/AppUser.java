@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name= "tbl_users")
-public class AppUser implements UserDetails {
+public class AppUser implements UserDetails { // AppUser mengimplementasikan UserDetails, yang merupakan bagian dari Spring Security. 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,15 +28,15 @@ public class AppUser implements UserDetails {
     private String fullname;
     @Column(length = 150, nullable = false, unique = true)
     private String email;
-    @Column(length = 200, nullable = false)
+    @Column(length = 200, nullable = false) // kalau error muncul status 500 karena belum di custom
     private String password;
-    @Enumerated((EnumType.STRING))
+    @Enumerated((EnumType.STRING)) // tipe data khusus yang berisi sekumpulan konstanta yang telah ditentukan sebelumnya
     private AppUserRole appUserRole;
     
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public Collection<? extends GrantedAuthority> getAuthorities() {  // implemented method dari UserDetails
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
-        return Collections.singletonList(authority);
+        return Collections.singletonList(authority); // 
     }
 
     @Override

@@ -85,6 +85,7 @@ public class CategoryController {
         return ResponseEntity.ok(responseData);
     }
 
+    // Endpoint untuk menampilkan data sesuai paging yang ingin ditampilkan
     @PostMapping("/search/{size}/{page}")
     public Iterable<Category> findByName(@RequestBody SearchData searchData, @PathVariable("size") int size, @PathVariable("page") int page){
 
@@ -92,6 +93,7 @@ public class CategoryController {
         return categoryService.findByName(searchData.getSearchKey(), pageable);
     }
 
+    // Endpoint untuk menampilkan data sesuai paging yang ingin ditampilkan dan metode pengurutan nya
     @PostMapping("/search/{size}/{page}/{sort}")
     public Iterable<Category> findByName(@RequestBody SearchData searchData, @PathVariable("size") int size, @PathVariable("page") int page, @PathVariable("sort") String sort){
 
@@ -102,6 +104,7 @@ public class CategoryController {
         return categoryService.findByName(searchData.getSearchKey(), pageable);
     }
     
+    // Endpoint untuk melakukan saveBatch (menyimpan beberapa data [category] secara langsung)
     @PostMapping("/batch")
     public ResponseEntity<ResponseData<Iterable<Category>>> saveBatch(@RequestBody Category[] categories){
 

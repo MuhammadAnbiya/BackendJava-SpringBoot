@@ -26,11 +26,13 @@ public class AppUserController {
     @Autowired
     private ModelMapper modelMapper;
 
+    // Endpoint untuk melakukan registrasi user
     @PostMapping("/register")
     public ResponseEntity<ResponseData<AppUser>> register(@RequestBody AppUserData userData){
 
-        ResponseData<AppUser> response = new ResponseData<>();
-        AppUser appUser = modelMapper.map(userData, AppUser.class);
+        ResponseData<AppUser> response = new ResponseData<>(); // instance dari kelas ResponseData
+
+        AppUser appUser = modelMapper.map(userData, AppUser.class); // Pemetaan data dengan ModelMapper Bean
         response.setPayload(appUserService.registerAppUser(appUser));
         response.setStatus(true);
         response.getMessages().add("AppUser saved!");

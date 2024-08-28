@@ -34,16 +34,11 @@ public class ProductController {
     // Endpoint untuk membuat product
     @PostMapping
     public ResponseEntity<ResponseData<Product>> create(@Valid @RequestBody Product product, Errors errors) {
-        // @ResponseEntitiy adalah sebuah kelas yang digunakan dalam Spring untuk
-        // membangun respons HTTP
-        // @ResponseData merupakan kelas custom untuk membangun respons yang lebih
-        // terstruktur (di file DTO) --> data transfer object
-        // @Valid Anotasi ini digunakan untuk mengaktifkan validasi pada objek product
-        // sebelum method dieksekusi
-        // Product product Parameter method ini yang berisi data produk yang dikirim
-        // oleh klien dalam body permintaan HTTP
-        // Errors errors Parameter untuk menangani dan menyimpan informasi kesalahan
-        // validasi yang terjadi selama proses validasi.
+        // @ResponseEntitiy adalah sebuah kelas yang digunakan dalam Spring untuk membangun respons HTTP
+        // @ResponseData merupakan kelas custom untuk membangun respons yang lebih terstruktur (di file DTO) --> data transfer object
+        // @Valid Anotasi ini digunakan untuk mengaktifkan validasi pada objek product sebelum method dieksekusi
+        // Product product Parameter method ini yang berisi data produk yang dikirim oleh klien dalam body permintaan HTTP
+        // Errors errors Parameter untuk menangani dan menyimpan informasi kesalahan validasi yang terjadi selama proses validasi.
 
         ResponseData<Product> responseData = new ResponseData<>(); // instance dari kelas ResponseData
 
@@ -104,6 +99,7 @@ public class ProductController {
         productService.removeAll();
     }
 
+    // Endpoint untuk menambahkan product pada sebuah supplier
     @PostMapping("/{id}")
     public void addSupplier(@RequestBody Supplier supplier, @PathVariable("id") Long productId) {
         productService.addSupplier(supplier, productId);
@@ -115,16 +111,19 @@ public class ProductController {
         return productService.findByProductName(searchData.getSearchKey());
     }
 
+    // Endpoint untuk mencari product dari namanya (tetapi tidak usah lengkap)
     @PostMapping("/search/namelike")
     public List<Product> getProductByNameLike(@RequestBody SearchData searchData) {
         return productService.findProductByNameLike(searchData.getSearchKey());
     }
 
+    // Endpoint untuk mencari product dari categorynya 
     @GetMapping("/search/category/{categoryId}")
     public List<Product> getProductByCategory(@PathVariable("categoryId") Long categoryId) {
         return productService.findProductByCategory(categoryId);
     }
 
+    // Endpoint untuk mencari product dari suppliernya 
     @GetMapping("/search/supplier/{supplierId}")
     public List<Product> getProductBySupplier(@PathVariable("supplierId") Long supplierId){
         return productService.findBySupplier(supplierId);

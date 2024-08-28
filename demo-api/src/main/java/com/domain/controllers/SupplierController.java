@@ -34,6 +34,7 @@ public class SupplierController {
     @Autowired
     private ModelMapper modelMapper;
 
+    // Endpoint untuk membuat Supplier baru
     @PostMapping
     public ResponseEntity<ResponseData<Supplier>> create(@Valid @RequestBody SupplierData supplierData, Errors errors) {
 
@@ -52,17 +53,19 @@ public class SupplierController {
         responseData.setPayload(supplierService.save(supplier));
         return ResponseEntity.ok(responseData);
     }
-
+    // Endpoint untuk menampilkan seluruh supplier
     @GetMapping
     public Iterable<Supplier> findAll(){
         return supplierService.findAll();
     }
 
+    // Endpoint untuk menampilkan supplier berdasarkan id nya
     @GetMapping("/{id}")
     public Supplier findOne(@PathVariable("id") Long id){
         return supplierService.findOne(id);
     }
-
+    
+    // Endpoint untuk update data supplier
     @PutMapping
     public ResponseEntity<ResponseData<Supplier>> update(@Valid @RequestBody SupplierData supplierData, Errors errors) {
 
@@ -89,31 +92,37 @@ public class SupplierController {
         return ResponseEntity.ok(responseData);
     }
 
+    // Endpoint untuk mencari supplier dari email nya
     @PostMapping("/search/byemail")
     public Supplier getSupplierByEmail(@RequestBody SearchData searchData){
         return supplierService.findByEmail(searchData.getSearchKey());
     }
 
+    // Endpoint untuk mencari supplier lewat email juga tetapi email yang dicari tidak harus lengkap
     @PostMapping("/search/byemaillike")
     public List<Supplier> getSupplierByEmailLike(@RequestBody SearchData searchData){
         return supplierService.findSupplierByEmailLike(searchData.getSearchKey());
     }
 
+    // Endpoint untuk mencari supplier dari namanya
     @PostMapping("/search/byname")
     public List<Supplier> getByNameContains(@RequestBody SearchData searchData){
         return supplierService.findByNameContais(searchData.getSearchKey());
     }
 
+    // Endpoint untuk mencari supplier dari nama awalnya saja
     @PostMapping("/search/namestarswith")
     public List<Supplier> getNameStartsWith(@RequestBody SearchData searchData){
         return supplierService.findByNameStartsWith(searchData.getSearchKey());
     }
 
+    // Endpoint untuk mencari supplier dari nama atau emailnya 
     @PostMapping("/search/bynameoremail")
     public List<Supplier> getByNameOrEmail(@RequestBody SearchData searchData){
         return supplierService.findByNameContainsOrEmailContains(searchData.getSearchKey(), searchData.getOtherSearchKey());
     }
 
+    // Endpoint untuk mencari supplier dari nama secara descending
     @PostMapping("/search/bynamedescending")
     public List<Supplier> getByNameDesc(@RequestBody SearchData searchData){
         return supplierService.findByNameContainsOrderByIdDesc(searchData.getSearchKey());

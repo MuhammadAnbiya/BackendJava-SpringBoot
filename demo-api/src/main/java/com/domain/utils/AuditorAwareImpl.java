@@ -9,20 +9,20 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 
-public class AuditorAwareImpl implements AuditorAware<String> {
+    public class AuditorAwareImpl implements AuditorAware<String> { // AuditorAware untuk framework untuk auditing di Spring
 
-    @SuppressWarnings("null")
-    @Override
-    public Optional<String> getCurrentAuditor() {
-        // Mendapatkan otentikasi dari SecurityContext
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        @SuppressWarnings("null")
+        @Override
+        public Optional<String> getCurrentAuditor() {  // Method Implementasi dari AuditorAware
+            // Mendapatkan otentikasi dari SecurityContext
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); 
 
-        // Memastikan otentikasi tidak null dan principal adalah instance AppUser
-        if (authentication != null && authentication.getPrincipal() instanceof AppUser) {
-            AppUser currentUser = (AppUser) authentication.getPrincipal();
-            return Optional.ofNullable(currentUser.getEmail());
+            // Memastikan otentikasi tidak null dan principal adalah instance AppUser
+            if (authentication != null && authentication.getPrincipal() instanceof AppUser) {
+                AppUser currentUser = (AppUser) authentication.getPrincipal();
+                return Optional.ofNullable(currentUser.getEmail());
+            }
+
+            return Optional.empty(); // Jika tidak ada otentikasi atau tidak valid
         }
-
-        return Optional.empty(); // Jika tidak ada otentikasi atau tidak valid
-    }
 }

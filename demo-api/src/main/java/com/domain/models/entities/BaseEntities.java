@@ -13,24 +13,30 @@ import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
-@MappedSuperclass // Anotasi ini menunjukkan bahwa kelas ini adalah superclass yang entitas-entitas lain akan mewarisi properti dan metode darinya
-@EntityListeners(AuditingEntityListener.class) // Bagian dari Spring JPA untuk  @CreatedBy, @CreatedDate, @LastModifiedBy, dan @LastModifiedDate
+// Anotasi ini menunjukkan bahwa kelas ini adalah superclass yang entitas-entitas lain akan mewarisi properti dan metode darinya
+@MappedSuperclass 
+// Bagian dari Spring JPA untuk  @CreatedBy, @CreatedDate, @LastModifiedBy, dan @LastModifiedDate
+@EntityListeners(AuditingEntityListener.class) 
 public abstract class BaseEntities<T> { 
     
     @CreatedBy
     protected T createdBy;
 
     @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP) // tipe temporal yang digunakan adalah TIMESTAMP, yang berarti tanggal dan waktu (baik tanggal maupun waktu akan disimpan).
+    // tipe temporal yang digunakan adalah TIMESTAMP, yang berarti tanggal dan waktu (baik tanggal maupun waktu akan disimpan).
+    @Temporal(TemporalType.TIMESTAMP) 
     protected Date createdDate;
 
     @LastModifiedBy
     protected T updatedBy;
 
     @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)// tipe temporal yang digunakan adalah TIMESTAMP, yang berarti tanggal dan waktu (baik tanggal maupun waktu akan disimpan).
+    // tipe temporal yang digunakan adalah TIMESTAMP, yang berarti tanggal dan waktu (baik tanggal maupun waktu akan disimpan).
+    @Temporal(TemporalType.TIMESTAMP)
     protected Date updateDate;
 
+    
+    // Setter and Getter
     public T getCreatedBy() {
         return createdBy;
     }

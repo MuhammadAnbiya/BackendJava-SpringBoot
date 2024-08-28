@@ -15,7 +15,7 @@ import com.domain.services.AppUserService;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig {
+public class WebSecurityConfig { // WebSecurityConfigurAdapter = sudah deprecated
     
     @Autowired
     private AppUserService appUserService;
@@ -24,14 +24,14 @@ public class WebSecurityConfig {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     // @Override
-    // protected void configure(HttpSecurity auth) throws exception {
+    // protected void configure(HttpSecurity auth) throws exception {   ==> versi WebSecurityConfigurAdapter
     //     http.csrf().disable()
     //     .authorizeRequest().antMatchers("api/users/register").permitAll()
     //     .anyRequest().fullyAuthenticated()
     //     .and().httpBasic();
     // }
 
-    @SuppressWarnings("removal")
+    @SuppressWarnings("removal") // menonaktifkan peringatan kompiler tertentu disini (removal)
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http

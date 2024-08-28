@@ -19,7 +19,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name= "tbl_users")
-public class AppUser implements UserDetails { // AppUser mengimplementasikan UserDetails, yang merupakan bagian dari Spring Security. 
+// AppUser mengimplementasikan UserDetails, yang merupakan bagian dari Spring Security.
+public class AppUser implements UserDetails {  
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,13 +29,18 @@ public class AppUser implements UserDetails { // AppUser mengimplementasikan Use
     private String fullname;
     @Column(length = 150, nullable = false, unique = true)
     private String email;
-    @Column(length = 200, nullable = false) // kalau error muncul status 500 karena belum di custom
+
+    // kalau error muncul status 500 karena belum di custom
+    @Column(length = 200, nullable = false) 
     private String password;
-    @Enumerated((EnumType.STRING)) // tipe data khusus yang berisi sekumpulan konstanta yang telah ditentukan sebelumnya
+
+    // tipe data khusus yang berisi sekumpulan konstanta yang telah ditentukan sebelumnya
+    @Enumerated((EnumType.STRING)) 
     private AppUserRole appUserRole;
     
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {  // implemented method dari UserDetails
+    // implemented method dari UserDetails
+    public Collection<? extends GrantedAuthority> getAuthorities() {  
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
         return Collections.singletonList(authority); // Intinya dia ngecek kalau yang masuk itu admin atau user dari appUserRole
     }
@@ -50,22 +56,26 @@ public class AppUser implements UserDetails { // AppUser mengimplementasikan Use
     }
 
     @Override
-    public boolean isAccountNonExpired() { // class yang digunakan oleh Spring Security untuk mengecek apakah akun kadaluarsa atau tidak
+    // class yang digunakan oleh Spring Security untuk mengecek apakah akun kadaluarsa atau tidak
+    public boolean isAccountNonExpired() { 
         return  true; // karena return nya true maka akun tidak akan pernah kadaluarsa
     }
 
     @Override
-    public boolean isAccountNonLocked() { // class yang digunakan oleh Spring Security untuk mengecek apakah akun di terkunci
+    // class yang digunakan oleh Spring Security untuk mengecek apakah akun di terkunci
+    public boolean isAccountNonLocked() { 
         return true; // karena return nya true maka akun tidak akan pernah terkunci
     }
 
     @Override 
-    public boolean isCredentialsNonExpired() { // class yang digunakan oleh Spring Security untuk mengecek apakah kredensial (misal sandi) kadaluarsa atau tidak
+    // class yang digunakan oleh Spring Security untuk mengecek apakah kredensial (misal sandi) kadaluarsa atau tidak
+    public boolean isCredentialsNonExpired() { 
         return true; // karena return nya true maka kredensial nya nya tidak akan kadaluarsa
     }
 
     @Override 
-    public boolean isEnabled() { // class yang digunakan oleh Spring Security untuk mengecek apakah akun pengguna aktif
+    // class yang digunakan oleh Spring Security untuk mengecek apakah akun pengguna aktif
+    public boolean isEnabled() { 
         return true; // karena return nya true maka akun pengguna akan selalu di aktifkan
     }
 

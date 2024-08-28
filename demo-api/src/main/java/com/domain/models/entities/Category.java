@@ -11,10 +11,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name= "tbl_categories")
+// Disini class category sudah mewarisi BaseEntities
 public class Category extends BaseEntities<String> implements Serializable {
     
     private static final long serialVersionUID = 1L;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,8 @@ public class Category extends BaseEntities<String> implements Serializable {
     @Column(length = 100, nullable = false, unique = true)
     private String name;
 
+
+    // Setter and Getter
     public Long getId() {
         return id;
     }

@@ -42,6 +42,8 @@ public class Supplier implements Serializable{
     // @JsonBackReference  // --> ditempatkan pada relasi yang menyebabkan rekursi
     private Set<Product> products;
 
+
+    // Setter and Getter
     public long getId() {
         return id;
     }

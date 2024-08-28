@@ -3,10 +3,11 @@ package com.domain.utils;
 import java.util.Optional;
 
 import com.domain.models.entities.AppUser;
+
+import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import org.springframework.data.domain.AuditorAware;
 
 public class AuditorAwareImpl implements AuditorAware<String> {
 

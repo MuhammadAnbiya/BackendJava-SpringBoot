@@ -55,11 +55,11 @@ public class Product implements Serializable {
     private Set<Supplier> suppliers;
 
 
-    // Default constructor
+    // Default Constructor
     public Product() {
     }
 
-
+    // Entities Constructor
     public Product(long id, @NotEmpty(message = "Name is Required") String name,
             @NotEmpty(message = "Description is Required") String description, double price) {
         this.id = id;
@@ -68,7 +68,7 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-
+    // Setter and Getter
     public Long getId() {
         return id;
     }

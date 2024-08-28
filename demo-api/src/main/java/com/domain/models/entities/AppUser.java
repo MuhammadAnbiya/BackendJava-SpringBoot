@@ -36,39 +36,40 @@ public class AppUser implements UserDetails { // AppUser mengimplementasikan Use
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {  // implemented method dari UserDetails
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
-        return Collections.singletonList(authority); // 
+        return Collections.singletonList(authority); // Intinya dia ngecek kalau yang masuk itu admin atau user dari appUserRole
     }
 
     @Override
-    public String getPassword() {
+    public String getPassword() { // untuk keperluan authentikasi untuk mengembalikan kata sandi pengguna
         return password;
     }
 
     @Override
-    public String getUsername() {
+    public String getUsername() { // untuk keperluan authentikasi untuk mengembalikan username pengguna
         return email;
     }
 
     @Override
-    public boolean isAccountNonExpired() {
-        return  true;
+    public boolean isAccountNonExpired() { // class yang digunakan oleh Spring Security untuk mengecek apakah akun kadaluarsa atau tidak
+        return  true; // karena return nya true maka akun tidak akan pernah kadaluarsa
     }
 
     @Override
-    public boolean isAccountNonLocked() {
-        return true;
+    public boolean isAccountNonLocked() { // class yang digunakan oleh Spring Security untuk mengecek apakah akun di terkunci
+        return true; // karena return nya true maka akun tidak akan pernah terkunci
     }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
+    @Override 
+    public boolean isCredentialsNonExpired() { // class yang digunakan oleh Spring Security untuk mengecek apakah kredensial (misal sandi) kadaluarsa atau tidak
+        return true; // karena return nya true maka kredensial nya nya tidak akan kadaluarsa
     }
 
-    @Override
-    public boolean isEnabled() {
-        return true;
+    @Override 
+    public boolean isEnabled() { // class yang digunakan oleh Spring Security untuk mengecek apakah akun pengguna aktif
+        return true; // karena return nya true maka akun pengguna akan selalu di aktifkan
     }
 
+    //Setter Getter
     public Long getId() {
         return id;
     }

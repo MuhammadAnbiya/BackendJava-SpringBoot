@@ -19,6 +19,7 @@ public interface ProductRepo extends CrudRepository<Product, Long> { // mengguna
     @Query("SELECT p FROM Product p WHERE p.category.id = :categoryId") // untuk mencari product dari category Id nya
     public List<Product> findProductByCategory(@PathParam("categoryId") Long categoryId);
 
-    @Query("SELECT p FROM Product p WHERE :supplier MEMBER OF p.suppliers") // untuk mencari supplier dari category Id nya
-    public List<Product> findProductBySupplier(@PathParam("supplier") Supplier supplier);
-}
+    @Query("SELECT p FROM Product p WHERE :supplier MEMBER OF p.suppliers") // untuk mencari supplier dari supplier Id nya
+    public List<Product> findProductBySupplier(@PathParam("supplier") Supplier supplier); // yang unik adalah dia menggunakan parameter object karena relasi yang many to many
+                                                                                        // dan mengecek dulu apakah supplier nya ada kalau ada dia akan ngecek lagi di suppliers
+}   

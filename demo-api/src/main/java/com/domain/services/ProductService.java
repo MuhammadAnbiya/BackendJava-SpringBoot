@@ -20,7 +20,7 @@ public class ProductService {
     private ProductRepo productRepo; // jadi class ProductRepo di deklarasikan sebagai productRepo untuk memanggil logicnya
 
     @Autowired
-    private SupplierService supplierService;
+    private SupplierService supplierService; // SupplierService d inject di Product service untuk memanggil method findOne
 
     public Product save(Product product){  // class untuk method create di controller yg memanggil method save dari productRepo
         return productRepo.save(product);
@@ -59,18 +59,18 @@ public class ProductService {
         return productRepo.findProductByName(name);
     }
 
-    public List<Product> findProductByNameLike(String name){
+    public List<Product> findProductByNameLike(String name){ // class untuk mencari product product tapi tidak harus lengkap (NameLike)
         return productRepo.findProductByNameLike("%"+name+"%");
     }
 
-    public List<Product> findProductByCategory(Long categoryId){
+    public List<Product> findProductByCategory(Long categoryId){ // class untuk mencari product dari categorynya
         return productRepo.findProductByCategory(categoryId);
     }
 
-    public List<Product> findBySupplier(Long supplierId){
+    public List<Product> findBySupplier(Long supplierId){ // class untuk mencari product dari suppliernya
         Supplier supplier = supplierService.findOne(supplierId);
         if (supplier == null) {
-            return new ArrayList<Product>();
+            return new ArrayList<Product>(); // nah kalau seperti ini, jika data suppliers tidak ditemukan maka hanya akan memberikan array kosong
         }
         return productRepo.findProductBySupplier(supplier);
     }

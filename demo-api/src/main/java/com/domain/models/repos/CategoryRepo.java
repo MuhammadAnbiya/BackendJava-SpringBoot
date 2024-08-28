@@ -18,7 +18,7 @@ public interface CategoryRepo extends PagingAndSortingRepository<Category, Long>
 
     void deleteById(Long id);
     
-    Page<Category> findByNameContains(String name, Pageable pageable);
+    Page<Category> findByNameContains(String name, Pageable pageable);  // mencari berdasarkan nama tapi dengan Paging
 
     Iterable<Category> saveAll(Iterable<Category> categories);
 

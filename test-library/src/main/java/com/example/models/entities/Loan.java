@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "tbl_loan")
@@ -21,10 +23,10 @@ public class Loan {
     @Column(length = 150, nullable = false)
     private String member;
 
-    @Column(length = 150, nullable = false)
+    @Temporal(TemporalType.DATE)
     private String loanDate;
 
-    @Column(length = 150, nullable = false)
+    @Temporal(TemporalType.DATE)
     private String returnDate;
 
     public Long getId() {
@@ -67,5 +69,5 @@ public class Loan {
         this.returnDate = returnDate;
     }
 
-    
+
 }

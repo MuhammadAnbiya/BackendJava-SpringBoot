@@ -32,28 +32,33 @@ public class WebSecurityConfig { // WebSecurityConfigurAdapter = sudah deprecate
     // }
 
     @SuppressWarnings("removal") // menonaktifkan peringatan kompiler tertentu disini (removal)
+
+    // Membuat Bean untuk SecurityFilterChain
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http
-            .csrf(csrf -> csrf.disable()) // Disable CSRF
+        http
+            .csrf(csrf -> csrf.disable()) // Menghilangkan CSRF
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/users/register").permitAll() // Allow access to register endpoint
-                .anyRequest().authenticated() // All other requests need to be authenticated
+                .requestMatchers("/api/users/register").permitAll() // Membuat API itu bisa diakses tanpa Authentication
+                .anyRequest().authenticated() // selain API itu harus melalui tahap Authentication
             )
-            .httpBasic(); // Enable HTTP Basic Authentication
+            .httpBasic(); // Mengaktifkan HTTP Basic Authentication
 
         return http.build();
     }
-        @Bean
+
+    // Membuat Bean untuk AuthenticationManager
+    @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
-        AuthenticationManagerBuilder authenticationManagerBuilder = 
-                http.getSharedObject(AuthenticationManagerBuilder.class);
+        // AuthenticationManagetBuild untuk mengembalikan autentikasi yang berhasil atau memunculkan pengecualian jika gagal.
+        AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.authenticationProvider(daoAuthenticationProvider());
         return authenticationManagerBuilder.build();
     }
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
+        //Dao Authentication Provider untuk mengecek username dan password
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(bCryptPasswordEncoder);
         provider.setUserDetailsService(appUserService);

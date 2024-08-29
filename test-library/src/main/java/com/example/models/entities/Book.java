@@ -12,7 +12,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "tbl_books")
+@Table(name = "tbl_book")
 public class Book {
     
     @Id

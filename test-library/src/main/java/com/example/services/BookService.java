@@ -38,8 +38,8 @@ public class BookService {
         bookRepo.deleteAll();
     }
 
-    public Iterable<Book> findByTitle(String name, Pageable pageable){
-        return bookRepo.findByTitleContains(name, pageable);
+    public Iterable<Book> findByTitle(String title, Pageable pageable){
+        return bookRepo.findByTitleContains(title, pageable);
     }
 
     public Iterable<Book> findAll(){

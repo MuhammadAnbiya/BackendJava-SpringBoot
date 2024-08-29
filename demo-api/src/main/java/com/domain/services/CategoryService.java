@@ -17,9 +17,11 @@ public class CategoryService {
     @Autowired
     private CategoryRepo categoryRepo;
 
-    public Category save(Category category) { //Method untuk save
-        if(category.getId()!=null){ // kalau true dia dibaca sebagai update
-            Category currentCategory = categoryRepo.findById(category.getId()).get(); // dia mencari id yang mana yang akan di update
+
+    // class untuk method save
+    public Category save(Category category) { 
+        if(category.getId()!=null){ // kalau category nya udah ada id nya, dia dibaca sebagai update
+            Category currentCategory = categoryRepo.findById(category.getId()).get(); // dia mencari id yang akan di update
             currentCategory.setName(category.getName()); // dia mengganti nama dari setter getter name
             category = currentCategory; // dan merubah category tadi dari update category baru yang diterima
         } // kalau false dia dibaca sebagai create
@@ -42,11 +44,14 @@ public class CategoryService {
     public void removeOne(Long id) {
         categoryRepo.deleteById(id);
     }
-    public Iterable<Category> findByName(String name, Pageable pageable){ // method untuk mencari berdasarkan nama pada paging
+
+    // class untuk mencari berdasarkan nama pada paging
+    public Iterable<Category> findByName(String name, Pageable pageable){ 
         return categoryRepo.findByNameContains(name, pageable);
     }
 
-    public Iterable<Category> saveBatch(Iterable<Category> categories){ // method untuk sekaligus melakukan save banyak data
+    // class untuk sekaligus melakukan save banyak data
+    public Iterable<Category> saveBatch(Iterable<Category> categories){ 
         return categoryRepo.saveAll(categories);
     }
 

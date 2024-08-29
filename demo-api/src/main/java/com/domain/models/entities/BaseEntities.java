@@ -22,16 +22,16 @@ public abstract class BaseEntities<T> {
     @CreatedBy
     protected T createdBy;
 
-    @CreatedDate
     // tipe temporal yang digunakan adalah TIMESTAMP, yang berarti tanggal dan waktu (baik tanggal maupun waktu akan disimpan).
+    @CreatedDate
     @Temporal(TemporalType.TIMESTAMP) 
     protected Date createdDate;
 
     @LastModifiedBy
     protected T updatedBy;
 
-    @LastModifiedDate
     // tipe temporal yang digunakan adalah TIMESTAMP, yang berarti tanggal dan waktu (baik tanggal maupun waktu akan disimpan).
+    @LastModifiedDate
     @Temporal(TemporalType.TIMESTAMP)
     protected Date updateDate;
 

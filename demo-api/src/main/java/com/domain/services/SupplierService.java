@@ -23,7 +23,7 @@ public class SupplierService {
     }
 
     public Supplier findOne(Long id){
-        Optional <Supplier> supplier = supplierRepo.findById(id);  // butuh Optional karena saat mencari supplier bisa jadi kosong
+        Optional <Supplier> supplier = supplierRepo.findById(id);  // butuh Optional karena supplier bisa jadi kosong
         if(!supplier.isPresent()){
             return null;
         }
@@ -43,7 +43,7 @@ public class SupplierService {
     }
 
     public List<Supplier> findSupplierByEmailLike(String email){ 
-        return supplierRepo.findSupplierByEmailLike("%"+email+"%"); // class untuk mencari email tetapi tidak harus lengkap (harus menggunakan % % )
+        return supplierRepo.findSupplierByEmailLike("%"+email+"%"); // tidak harus lengkap karena EmailLie (harus %+variabel+%)
     }
 
     // Contoh Derived Query yang lain

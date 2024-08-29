@@ -8,7 +8,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.domain.models.entities.Category;
 
-public interface CategoryRepo extends PagingAndSortingRepository<Category, Long> { // Derived Query dari PagingAndSortingRepository
+// Derived Query dari PagingAndSortingRepository
+public interface CategoryRepo extends PagingAndSortingRepository<Category, Long> { 
 
     Category save(Category category);
 
@@ -21,6 +22,5 @@ public interface CategoryRepo extends PagingAndSortingRepository<Category, Long>
     Page<Category> findByNameContains(String name, Pageable pageable);  // mencari berdasarkan nama tapi dengan Paging
 
     Iterable<Category> saveAll(Iterable<Category> categories);
-
 
 }

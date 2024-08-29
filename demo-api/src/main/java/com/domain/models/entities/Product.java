@@ -3,9 +3,9 @@ package com.domain.models.entities;
 import java.io.Serializable;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 // import com.fasterxml.jackson.annotation.JsonManagedReference;
-// import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+// import com.fasterxml.jackson.annotation.JsonIdentityInfo; // Package untuk Json BackReference
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
@@ -43,16 +43,16 @@ public class Product implements Serializable {
 
     private double price; // private = aksesibilitas, double = type data primitive untuk desimal, price nama dari variabel
 
-    @ManyToOne
+    @ManyToOne // relasi antar tabel
     private Category category; // artinya satu category bisa memiliki banyak jenis produk
 
     @ManyToMany
-    @JoinTable(
-        name= "tbl_product_supplier",
-        joinColumns = @JoinColumn(name= "product_id"),
-        inverseJoinColumns = @JoinColumn(name= "supplier_id"))
+    @JoinTable( 
+        name= "tbl_product_supplier", // nama table baru yang menggabungkan kedua tabel
+        joinColumns = @JoinColumn(name= "product_id"), // table yang diambil dari table product yaitu productId nya
+        inverseJoinColumns = @JoinColumn(name= "supplier_id")) // table yang diambil dari table supplier yaitu supplierId nya
     // @JsonManagedReference  // --> diterapkan pada titik awal serialisasi
-    private Set<Supplier> suppliers;
+    private Set<Supplier> suppliers; // artinya banyak supplier juga bisa mempunyai banyak category
 
 
     // Default Constructor
@@ -68,7 +68,7 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    // Setter and Getter
+    // Setter and Getter    
     public Long getId() {
         return id;
     }

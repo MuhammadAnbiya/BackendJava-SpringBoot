@@ -30,16 +30,17 @@ public class AppUser implements UserDetails {
     @Column(length = 150, nullable = false, unique = true)
     private String email;
 
-    // kalau error muncul status 500 karena belum di custom
+    // kalau error muncul status 500 karena belum di custom error handling nya
     @Column(length = 200, nullable = false) 
     private String password;
 
     // tipe data khusus yang berisi sekumpulan konstanta yang telah ditentukan sebelumnya
     @Enumerated((EnumType.STRING)) 
     private AppUserRole appUserRole;
+
     
-    @Override
     // implemented method dari UserDetails
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {  
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
         return Collections.singletonList(authority); // Intinya dia ngecek kalau yang masuk itu admin atau user dari appUserRole
@@ -55,26 +56,26 @@ public class AppUser implements UserDetails {
         return email;
     }
 
-    @Override
     // class yang digunakan oleh Spring Security untuk mengecek apakah akun kadaluarsa atau tidak
+    @Override
     public boolean isAccountNonExpired() { 
         return  true; // karena return nya true maka akun tidak akan pernah kadaluarsa
     }
 
-    @Override
     // class yang digunakan oleh Spring Security untuk mengecek apakah akun di terkunci
+    @Override
     public boolean isAccountNonLocked() { 
         return true; // karena return nya true maka akun tidak akan pernah terkunci
     }
 
-    @Override 
     // class yang digunakan oleh Spring Security untuk mengecek apakah kredensial (misal sandi) kadaluarsa atau tidak
+    @Override 
     public boolean isCredentialsNonExpired() { 
         return true; // karena return nya true maka kredensial nya nya tidak akan kadaluarsa
     }
 
-    @Override 
     // class yang digunakan oleh Spring Security untuk mengecek apakah akun pengguna aktif
+    @Override 
     public boolean isEnabled() { 
         return true; // karena return nya true maka akun pengguna akan selalu di aktifkan
     }

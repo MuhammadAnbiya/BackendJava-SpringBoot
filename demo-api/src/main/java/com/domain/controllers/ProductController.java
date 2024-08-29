@@ -28,8 +28,7 @@ import jakarta.validation.Valid;
 public class ProductController {
 
     @Autowired // anotasi untuk injeksi dependensi
-    private ProductService productService; // jadi class ProductService di deklarasikan sebagai productService untuk
-                                           // memanggil logicnya
+    private ProductService productService; // class ProductService di deklarasikan sebagai productService untuk memanggil logicnya
 
     // Endpoint untuk membuat product
     @PostMapping

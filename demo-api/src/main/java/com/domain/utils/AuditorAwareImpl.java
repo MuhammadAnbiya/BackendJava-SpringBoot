@@ -9,7 +9,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 
-    public class AuditorAwareImpl implements AuditorAware<String> { // AuditorAware untuk framework untuk auditing di Spring
+    // AuditorAware untuk framework untuk auditing di Spring
+    public class AuditorAwareImpl implements AuditorAware<String> { 
 
         @SuppressWarnings("null")
         @Override

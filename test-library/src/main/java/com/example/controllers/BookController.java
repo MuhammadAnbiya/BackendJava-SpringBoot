@@ -94,20 +94,29 @@ public class BookController {
     }
 
     
-    @PutMapping
-    public ResponseEntity<ResponseData<Book>> update(@Valid @RequestBody BookData bookData, Errors errors){
+    @PutMapping("/{id}")
+    public ResponseEntity<ResponseData<Book>> update(@PathVariable("id") Long id, @Valid @RequestBody BookData bookData, Errors errors) {
 
         ResponseData<Book> responseData = new ResponseData<>();
 
-        if(errors.hasErrors()){
-            for (ObjectError error : errors.getAllErrors()){
+        if (errors.hasErrors()) {
+            for (ObjectError error : errors.getAllErrors()) {
                 responseData.getMessage().add(error.getDefaultMessage());
             }
             responseData.setStatus(false);
             responseData.setPayload(null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
+
+        Book existingBook = bookService.findOne(id);
+        if (existingBook == null) {
+            responseData.setStatus(false);
+            responseData.getMessage().add("Buku dengan ID " + id + " tidak ditemukan.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
+        }
+
         Book book = modelMapper.map(bookData, Book.class);
+        book.setId(id); 
         responseData.setStatus(true);
         responseData.setPayload(bookService.save(book));
         return ResponseEntity.ok(responseData);

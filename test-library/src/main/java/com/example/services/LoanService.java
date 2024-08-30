@@ -23,7 +23,8 @@ public class LoanService {
     }
 
     public Loan save(Loan loan) {
-    return loanRepo.save(loan);
+        validateLoanDates(loan);
+        return loanRepo.save(loan);
     }
 
     public Loan findById(Long id){
@@ -40,5 +41,11 @@ public class LoanService {
 
     public void removeAll(){
         loanRepo.deleteAll();
+    }
+
+    private void validateLoanDates(Loan loan) {
+    if (loan.getReturnDate().isBefore(loan.getLoanDate())) {
+        throw new IllegalArgumentException("Return Date cannot be before Loan Date.");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -55,8 +56,19 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public Book findBook(@PathVariable("id") Long id){
-        return bookService.findOne(id);
+    public ResponseEntity<ResponseData<Book>> findById(@PathVariable("id") Long id){
+        ResponseData<Book> responseData = new ResponseData<>();
+
+        Book book = bookService.findOne(id);
+        if (book == null) {
+            responseData.setStatus(false);
+            responseData.getMessage().add("Member dengan ID " + id + " tidak ditemukan.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
+        }
+
+        responseData.setStatus(true);
+        responseData.setPayload(book);
+        return ResponseEntity.ok(responseData);
     }
 
     @PutMapping
@@ -78,14 +90,39 @@ public class BookController {
         return ResponseEntity.ok(responseData);
     }
 
-    @DeleteMapping("/{id}")
-    public void removeOne(@PathVariable("id") Long id) {
-        bookService.removeOne(id);
+    @DeleteMapping
+    public ResponseEntity<ResponseData<Void>> removeAll() {
+
+        ResponseData<Void> responseData = new ResponseData<>();
+
+        Iterable<Book> books = bookService.findAll(); 
+        if (!books.iterator().hasNext()) {
+            responseData.setStatus(false);
+            responseData.getMessage().add("Tidak ada buku untuk dihapus.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
+        }
+        bookService.removeAll(); 
+        responseData.setStatus(true);
+        responseData.getMessage().add("Semua buku berhasil dihapus.");
+        return ResponseEntity.ok(responseData);
     }
 
-    @DeleteMapping
-    public void removeAll(){
-        bookService.removeAll();
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ResponseData<Void>> removeById(@PathVariable("id") Long id) {
+
+        ResponseData<Void> responseData = new ResponseData<>();
+
+        Book book = bookService.findOne(id);
+        if (book == null) {
+            responseData.setStatus(false);
+            responseData.getMessage().add("Buku dengan ID " + id + " tidak ditemukan.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
+        }
+        bookService.removeOne(id); 
+        responseData.setStatus(true);
+        responseData.getMessage().add("Buku dengan ID " + id + " berhasil dihapus.");
+        return ResponseEntity.ok(responseData);
     }
 
     @PostMapping("/search/{size}/{page}")

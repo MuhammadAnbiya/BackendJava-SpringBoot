@@ -22,4 +22,5 @@ public interface BookRepo extends PagingAndSortingRepository<Book, Long>{
     Page<Book> findByTitleContains(String title, Pageable pageable);
     
     Iterable<Book> findAll();
+    
 }

@@ -17,8 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dto.LoanData;
 import com.example.dto.ResponseData;
+import com.example.models.entities.Book;
 import com.example.models.entities.Loan;
+import com.example.models.entities.Member;
+import com.example.services.BookService;
 import com.example.services.LoanService;
+import com.example.services.MemberService;
 
 import jakarta.validation.Valid;
 
@@ -30,12 +34,20 @@ public class LoanController {
     private LoanService loanService;
 
     @Autowired
+    private MemberService memberService;
+
+    @Autowired
+    private BookService bookService;
+
+    @Autowired
     private ModelMapper modelMapper;
 
     @PostMapping
     public ResponseEntity<ResponseData<Loan>> create(@Valid @RequestBody LoanData loanData, Errors errors) {
+        
         ResponseData<Loan> responseData = new ResponseData<>();
 
+        // Cek dan kumpulkan kesalahan validasi
         if (errors.hasErrors()) {
             for (ObjectError error : errors.getAllErrors()) {
                 responseData.getMessage().add(error.getDefaultMessage());
@@ -45,11 +57,36 @@ public class LoanController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
 
-        Loan loan = modelMapper.map(loanData, Loan.class);
+        // Cari Member dan Book
+        Member member = memberService.findById(loanData.getMemberId());
+        if (member == null) {
+            responseData.getMessage().add("Member not found with id: " + loanData.getMemberId());
+            responseData.setStatus(false);
+            responseData.setPayload(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+        }
+
+        Book book = bookService.findById(loanData.getBookId());
+        if (book == null) {
+            responseData.getMessage().add("Book not found with id: " + loanData.getBookId());
+            responseData.setStatus(false);
+            responseData.setPayload(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+        }
+
+        // Buat objek Loan dan atur propertinya
+        Loan loan = new Loan();
+        loan.setLoanDate(loanData.getLoanDate());
+        loan.setReturnDate(loanData.getReturnDate());
+        loan.setMember(member);
+        loan.setBook(book);
+
+        // Simpan Loan menggunakan service
         responseData.setStatus(true);
-        responseData.setPayload(loanService.save(loan));
+        responseData.setPayload(loanService.save(loanData));
         return ResponseEntity.ok(responseData);
     }
+
 
     @GetMapping
     public ResponseEntity<ResponseData<Iterable<Loan>>> findAll() {
@@ -109,7 +146,7 @@ public class LoanController {
         Loan loan = modelMapper.map(loanData, Loan.class);
         loan.setId(id); 
         responseData.setStatus(true);
-        responseData.setPayload(loanService.save(loan));
+        responseData.setPayload(loanService.save(loanData));
         return ResponseEntity.ok(responseData);
     }
 

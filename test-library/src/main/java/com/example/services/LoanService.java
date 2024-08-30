@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.dto.LoanData;
 import com.example.models.entities.Loan;
 import com.example.models.repos.LoanRepo;
 
@@ -22,8 +23,8 @@ public class LoanService {
         return loanRepo.findAll();
     }
 
-    public Loan save(Loan loan){
-        return loanRepo.save(loan);
+    public Loan save(LoanData loanData) {
+    return loanRepo.save(loanData);
     }
 
     public Loan findById(Long id){

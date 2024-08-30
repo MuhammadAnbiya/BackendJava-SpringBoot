@@ -81,7 +81,7 @@ public class BookController {
     public ResponseEntity<ResponseData<Book>> findById(@PathVariable("id") Long id){
         ResponseData<Book> responseData = new ResponseData<>();
 
-        Book book = bookService.findOne(id);
+        Book book = bookService.findById(id);
         if (book == null) {
             responseData.setStatus(false);
             responseData.getMessage().add("Member dengan ID " + id + " tidak ditemukan.");
@@ -108,7 +108,7 @@ public class BookController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
 
-        Book existingBook = bookService.findOne(id);
+        Book existingBook = bookService.findById(id);
         if (existingBook == null) {
             responseData.setStatus(false);
             responseData.getMessage().add("Buku dengan ID " + id + " tidak ditemukan.");
@@ -146,7 +146,7 @@ public class BookController {
 
         ResponseData<Void> responseData = new ResponseData<>();
 
-        Book book = bookService.findOne(id);
+        Book book = bookService.findById(id);
         if (book == null) {
             responseData.setStatus(false);
             responseData.getMessage().add("Buku dengan ID " + id + " tidak ditemukan.");

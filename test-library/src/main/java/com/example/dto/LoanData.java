@@ -1,54 +1,63 @@
 package com.example.dto;
 
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import jakarta.validation.constraints.NotBlank;
+import java.time.LocalDate;
+
+import jakarta.validation.constraints.NotNull;
 
 public class LoanData {
 
-    @NotBlank(message = "Book is Required")
-    private String book;
+    private Long id;
+    
+    @NotNull(message = "Loan Date is Required")
+    private LocalDate loanDate;
 
-    @NotBlank(message = "Member is Required")
-    private String member;
+    @NotNull(message = "Return Date is Required")
+    private LocalDate returnDate;
 
-    @Temporal(TemporalType.DATE)
+    @NotNull(message = "Member ID is Required")
+    private Long memberId;
 
-    private String loanDate;
+    @NotNull(message = "Book ID is Required")
+    private Long bookId;
 
-    @Temporal(TemporalType.DATE)
-    private String returnDate;
-
-    public String getBook() {
-        return book;
+    public Long getId() {
+        return id;
     }
 
-    public void setBook(String book) {
-        this.book = book;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getMember() {
-        return member;
-    }
-
-    public void setMember(String member) {
-        this.member = member;
-    }
-
-    public String getLoanDate() {
+    public LocalDate getLoanDate() {
         return loanDate;
     }
 
-    public void setLoanDate(String loanDate) {
+    public void setLoanDate(LocalDate loanDate) {
         this.loanDate = loanDate;
     }
 
-    public String getReturnDate() {
+    public LocalDate getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(String returnDate) {
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
+    }
+
+    public Long getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
+    }
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
 
     

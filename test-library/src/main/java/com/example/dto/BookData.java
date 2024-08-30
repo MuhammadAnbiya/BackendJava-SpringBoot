@@ -1,10 +1,10 @@
 package com.example.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 
 public class BookData {
     
@@ -17,8 +17,8 @@ public class BookData {
     @NotBlank(message = "Category is Required")
     private String category;
     
-    @Temporal(TemporalType.DATE)
-    private Date publishedDate;
+    @NotNull(message = "Published Date is Required")
+    private LocalDate publishedDate;
 
     public String getTitle() {
         return title;
@@ -44,11 +44,11 @@ public class BookData {
         this.category = category;
     }
 
-    public Date getPublishedDate() {
+    public LocalDate getPublishedDate() {
         return publishedDate;
     }
 
-    public void setPublishedDate(Date publishedDate) {
+    public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
     }
 

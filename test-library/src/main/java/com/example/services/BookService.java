@@ -22,7 +22,7 @@ public class BookService {
         return bookRepo.save(book);
     }
 
-    public Book findOne(Long id){
+    public Book findById(Long id){
         Optional<Book> book = bookRepo.findById(id);
         if(!book.isPresent()){
             return null;

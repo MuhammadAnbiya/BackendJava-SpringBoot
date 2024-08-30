@@ -1,15 +1,16 @@
 package com.example.models.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "tbl_book")
@@ -28,8 +29,11 @@ public class Book {
     @Column(length = 150, nullable = false)
     private String category;
 
-    @Temporal(TemporalType.DATE)
-    private Date publishedDate;
+    @Column(length = 150, nullable = false)    
+    private LocalDate publishedDate;
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Loan> loans;
 
     public Long getId() {
         return id;
@@ -63,12 +67,20 @@ public class Book {
         this.category = category;
     }
 
-    public Date getPublishedDate() {
+    public LocalDate getPublishedDate() {
         return publishedDate;
     }
 
-    public void setPublishedDate(Date publishedDate) {
+    public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
+    }
+
+    public Set<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(Set<Loan> loans) {
+        this.loans = loans;
     }
 
     

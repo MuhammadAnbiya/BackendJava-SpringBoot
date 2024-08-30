@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.example.dto.LoanData;
 import com.example.models.entities.Loan;
 
 public interface LoanRepo extends PagingAndSortingRepository<Loan, Long> {
@@ -14,7 +13,7 @@ public interface LoanRepo extends PagingAndSortingRepository<Loan, Long> {
 
     Optional<Loan> findById(Long id);
 
-    Loan save(LoanData loanData);
+    Loan save(Loan loan);
 
     void deleteById(Long id);
 

@@ -80,10 +80,9 @@ public class LoanController {
         loan.setReturnDate(loanData.getReturnDate());
         loan.setMember(member);
         loan.setBook(book);
-
         // Simpan Loan menggunakan service
         responseData.setStatus(true);
-        responseData.setPayload(loanService.save(loanData));
+        responseData.setPayload(loanService.save(loan));
         return ResponseEntity.ok(responseData);
     }
 
@@ -146,7 +145,7 @@ public class LoanController {
         Loan loan = modelMapper.map(loanData, Loan.class);
         loan.setId(id); 
         responseData.setStatus(true);
-        responseData.setPayload(loanService.save(loanData));
+        responseData.setPayload(loanService.save(loan));
         return ResponseEntity.ok(responseData);
     }
 

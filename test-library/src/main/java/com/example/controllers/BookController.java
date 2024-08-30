@@ -36,6 +36,7 @@ public class BookController {
     @Autowired
     private ModelMapper modelMapper;
 
+
     @PostMapping
     public ResponseEntity<ResponseData<Book>> create(@Valid @RequestBody BookData bookData, Errors errors){
 
@@ -55,6 +56,27 @@ public class BookController {
         return ResponseEntity.ok(responseData);
     }
 
+
+    @GetMapping
+    public ResponseEntity<ResponseData<Iterable<Book>>> findAll() {
+
+        ResponseData<Iterable<Book>> responseData = new ResponseData<>();
+
+        Iterable<Book> books = bookService.findAll();
+        if (!books.iterator().hasNext()) {
+            responseData.setStatus(false);
+            responseData.getMessage().add("Tidak ada Buku di Database");
+            responseData.setPayload(null);  // Tidak ada data yang ditampilkan jika tidak ada buku
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
+        }
+
+        responseData.setStatus(true);
+        responseData.getMessage().add("Ini adalah data dari semua Buku");
+        responseData.setPayload(books);  // Set payload dengan data buku
+        return ResponseEntity.ok(responseData);
+    }
+
+
     @GetMapping("/{id}")
     public ResponseEntity<ResponseData<Book>> findById(@PathVariable("id") Long id){
         ResponseData<Book> responseData = new ResponseData<>();
@@ -71,6 +93,7 @@ public class BookController {
         return ResponseEntity.ok(responseData);
     }
 
+    
     @PutMapping
     public ResponseEntity<ResponseData<Book>> update(@Valid @RequestBody BookData bookData, Errors errors){
 
@@ -89,6 +112,7 @@ public class BookController {
         responseData.setPayload(bookService.save(book));
         return ResponseEntity.ok(responseData);
     }
+
 
     @DeleteMapping
     public ResponseEntity<ResponseData<Void>> removeAll() {
@@ -125,6 +149,7 @@ public class BookController {
         return ResponseEntity.ok(responseData);
     }
 
+
     @PostMapping("/search/{size}/{page}")
     public Iterable<Book> findBy(@RequestBody SearchData searchData, @PathVariable("size") int size, 
     @PathVariable("page") int page){
@@ -133,8 +158,4 @@ public class BookController {
         return bookService.findByTitle(searchData.getSearchKey(), pageable);
     }
     
-    @GetMapping
-    public Iterable<Book> findAll(){
-        return bookService.findAll();
-    }
 }

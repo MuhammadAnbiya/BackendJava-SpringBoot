@@ -32,7 +32,7 @@ public class ChatMessageService {
         return chatMessageRepo.countBySenderIdAndRecipientAndStatus(senderId, recipientId, MessageStatus.RECEIVED);
     }
 
-    public List<ChatMessage> findByChatId(String senderId, String recipientId) {
+    public List<ChatMessage> findChatMessages(String senderId, String recipientId) {
         Optional<String> chatId = chatRoomService.getChatId(senderId, recipientId, false);
         List<ChatMessage> messages = chatId.map(cid -> chatMessageRepo.findByChatId(cid))
                                            .orElse(new ArrayList<>());

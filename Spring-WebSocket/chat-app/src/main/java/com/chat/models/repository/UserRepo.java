@@ -8,7 +8,7 @@ import com.chat.models.entities.User;
 
 public interface UserRepo extends JpaRepository<User, String> {
 
-    Optional<User> findByUsename(String username);
+    Optional<User> findByUsername(String username);
 
     
 }

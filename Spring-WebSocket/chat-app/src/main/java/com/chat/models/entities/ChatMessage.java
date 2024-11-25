@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class ChatMessage implements Serializable{
+public class ChatMessage implements Serializable {
 
     @Id
     private String id;
@@ -24,7 +24,7 @@ public class ChatMessage implements Serializable{
     private String senderName;
     private String content;
     private Date createAt;
+    
     @Enumerated(EnumType.STRING)
     private MessageStatus status;
-
 }

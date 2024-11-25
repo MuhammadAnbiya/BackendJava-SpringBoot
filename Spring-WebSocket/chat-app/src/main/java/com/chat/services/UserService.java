@@ -15,8 +15,8 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    public User findByUsename(String username){
-        Optional<User> optional = userRepo.findByUsename(username);
+    public User findByUsername(String username){
+        Optional<User> optional = userRepo.findByUsername(username);
         if (optional.isPresent())
             return optional.get();
 

@@ -29,7 +29,7 @@ public class ChatMessageService {
     }
 
     public Long countNewMessages(String senderId, String recipientId) {
-        return chatMessageRepo.countBySenderIdAndRecipientAndStatus(senderId, recipientId, MessageStatus.RECEIVED);
+        return chatMessageRepo.countBySenderIdAndRecipientIdAndStatus(senderId, recipientId, MessageStatus.RECEIVED);
     }
 
     public List<ChatMessage> findChatMessages(String senderId, String recipientId) {

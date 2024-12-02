@@ -1,4 +1,4 @@
-package com.auth;
+package com.googleauth.googleauth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

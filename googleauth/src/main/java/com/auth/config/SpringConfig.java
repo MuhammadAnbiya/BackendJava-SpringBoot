@@ -8,15 +8,17 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SpringConfig {
-    
+
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.authorizeHttpRequests(registry->{
-            registry.requestMatchers("/").permitAll();
-            registry.anyRequest().authenticated();
-        })
-        .oauth2Login(Customizer.withDefaults())
-        .formLogin(Customizer.withDefaults())
-        .build();
+    public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
+        return http
+            .authorizeHttpRequests(registry -> {
+                registry.requestMatchers("/").permitAll();
+                registry.anyRequest().authenticated();
+            })
+            .oauth2Login(Customizer.withDefaults())
+            .formLogin(Customizer.withDefaults())
+            .build();
     }
+    
 }

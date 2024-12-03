@@ -1,0 +1,656 @@
+[33mcommit 923639cd6a6c6d83171c49fa64c5f0baff7db89f[m[33m ([m[1;32mrecover-branch[m[33m)[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Tue Dec 3 08:23:58 2024 +0700
+
+    update - finish app.prop
+
+[33mcommit dc3921b4a7760cfaa108e2714e7661e61784c12b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 15:48:45 2024 +0700
+
+    update - finish googleAuth in new file
+
+[33mcommit 5aaa3994fd18c1b207c0c2fdc8646eeb8f04d43c[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 14:47:00 2024 +0700
+
+    update - finish create a new auth file
+
+[33mcommit 559313dccecdbccc9b8b47d63c1fc224e0c9434e[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 14:32:52 2024 +0700
+
+    update - create a new file
+
+[33mcommit 6c44f19580bc6d1cdc6ff666c17d32445865a2f7[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 13:45:22 2024 +0700
+
+    update - resolved client-id prob
+
+[33mcommit ba25f7181a6c6d96ddfa32aa80bc35529fa42429[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 14:17:13 2024 +0700
+
+    update - resolved
+
+[33mcommit f556a64a41a67ada19c0a95929b4b383040da0c2[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 13:44:02 2024 +0700
+
+    update - resolved new file
+
+[33mcommit 91c60bca664a72582c72c16e41024b6b221de002[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 13:41:44 2024 +0700
+
+    update -resolved client-id
+
+[33mcommit 42b00faa24d4550d657976a38cd378a7fa38cbb9[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 13:40:47 2024 +0700
+
+    update - resolved client_id
+
+[33mcommit 7f7e4d7901550aac3758a2c49fa2773587bf52a0[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Dec 2 13:08:09 2024 +0700
+
+    update 2/12 - finish create googleAuth
+
+[33mcommit 07fff7212c1edca3eb4b48ab9fa7cd27a0f34c8a[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Nov 25 16:23:07 2024 +0700
+
+    update 25/11 - resolved dependencies
+
+[33mcommit d5eeb9ce0df5386de60ba7a2796cd30e1b16c368[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Nov 25 15:20:06 2024 +0700
+
+    update 25/11 - finish create services
+
+[33mcommit d2152c9e965929110ea4387620ab8683a255589c[m
+Author: muhammadanbiya <muhammadanbiya@localhost.localdomain>
+Date:   Mon Nov 25 11:44:24 2024 +0700
+
+    firstpush 25/11 - back to office, recreate web socket
+
+[33mcommit 86079554f11445847f205f1d9c0e2e60bb0a54ae[m
+Author: Muhammad Anbiya Fatah <anbiyafth@localhost.localdomain>
+Date:   Tue Sep 3 17:40:07 2024 +0700
+
+    update 3/9 -  add swagger in testlibrary (Linux)
+
+[33mcommit 7e8162e02f88e3b08c83ad2c816c86c9f3409bd5[m
+Author: Muhammad Anbiya Fatah <anbiyafth@localhost.localdomain>
+Date:   Tue Sep 3 16:41:32 2024 +0700
+
+    firstpush 3/9 - cant running on windows so i use Linux
+
+[33mcommit 2e1d819bbed22bf9307c6f348b5a6636c74a7184[m[33m ([m[1;35mrefs/stash[m[33m)[m
+Merge: 1a4e99c ead1522
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Sep 3 16:10:37 2024 +0700
+
+    WIP on main: 1a4e99c lastpush 2/9 - can create simple hello world api
+
+[33mcommit ead1522541c0e4942910d24a7d822346c2ce525d[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Sep 3 16:10:37 2024 +0700
+
+    index on main: 1a4e99c lastpush 2/9 - can create simple hello world api
+
+[33mcommit 1a4e99cb7f4c20a9d4d9310598e20dd995c846dd[m
+Author: Muhammad Anbiya Fatah <anbiyafth@localhost.localdomain>
+Date:   Tue Sep 3 00:33:20 2024 +0700
+
+    lastpush 2/9 - can create simple hello world api
+
+[33mcommit 9585ad5382ef4372b54a7a6f868846e1734a496f[m
+Author: Muhammad Anbiya Fatah <anbiyafth@localhost.localdomain>
+Date:   Mon Sep 2 18:22:15 2024 +0700
+
+    firstpush 2/9 - first push on Linux
+
+[33mcommit 8669a87b3050180f21d209b9b443fcaba400c9bb[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 30 16:03:54 2024 +0700
+
+    lastpush 30/8 - create validation loan dates
+
+[33mcommit 08ee222ae46610562f1dc612200bc318d1a3373e[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 30 15:51:38 2024 +0700
+
+    update 30/8 - fix table loan (maybe)
+
+[33mcommit f0c2aab7472d77c5c65afe9cf63c33561ee52afd[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 30 15:25:51 2024 +0700
+
+    update 30/8 - create global error handling and relationships between tables (except loan)
+
+[33mcommit f5abc91267c088df3e55e56ed1ea4808c2fe357f[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 30 10:54:10 2024 +0700
+
+    update 30/8 - create CRUD error message for all entitites
+
+[33mcommit 4778a00a3b1bddd5976f44aa580d29168221b2e3[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 30 10:08:35 2024 +0700
+
+    update 30/8 - create getAll error message
+
+[33mcommit 0ec92110db740a08ff41692d87bb640a352ff5b1[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 30 09:48:00 2024 +0700
+
+    update 30/8 - create CRUD error message for book entities
+
+[33mcommit a71c4592990931276f8dabeaaf932b663356ad02[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 30 09:16:54 2024 +0700
+
+    firstpush 30/8 - create entities validation and error message for create and update
+
+[33mcommit 870a6c27770583fc40e50ea9b60c61fdd799eb17[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 16:33:58 2024 +0700
+
+    lastpush 29/8 - finish create Rest API loan
+
+[33mcommit a4b9f7a3e747781f8c99c3c38e71ee3aecc421de[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 15:01:11 2024 +0700
+
+    update29/8 - finish create Rest API member
+
+[33mcommit 6bb848adfa13686e4e200d7d9c0b9df9e4d47711[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 13:57:31 2024 +0700
+
+    update 29/8 -  finish create Rest API book
+
+[33mcommit 9cf6ab332b9ec5adc801bee8126cfb5bb41ace02[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 11:59:26 2024 +0700
+
+    update 29/8 - create book api and connect to database
+
+[33mcommit 99584a1f930e678ae9d9d6b09664d5e3d937d9c0[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 11:27:19 2024 +0700
+
+    update 29/8 - push before checkout
+
+[33mcommit 1659118e55acfb58738db3c7b50d0c44b911a732[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 11:10:47 2024 +0700
+
+    update 29/8 - create entities and repository for test-library
+
+[33mcommit 52d8a46fce6efb34cc34f41c19cfd03f56779e18[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 10:18:45 2024 +0700
+
+    update 29/8 - create new project for testing
+
+[33mcommit 850fac36316f58d3203d7472400065e2d2b30a50[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 09:44:32 2024 +0700
+
+    update 29/8 - understand security spring structure
+
+[33mcommit 8aca68e4cb526535d074b299737812601504bf34[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 29 08:44:46 2024 +0700
+
+    firstpush 29/8 - give notes for some codes
+
+[33mcommit 4d13536a6f82e40e520a2a1f4f3754048e57dad0[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 16:32:01 2024 +0700
+
+    lastpush 22/8 - understand security structures and clean up entity folders, tapi pulang dulu ah lanjut dirumah
+
+[33mcommit 3992bf7cfd7fd434fb5ec9c79a234e58c05771fb[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 16:13:41 2024 +0700
+
+    update 28/8 - understand utils structure
+
+[33mcommit 24831445e7772784682c6091dee2c3a4b90d7e6d[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 15:57:23 2024 +0700
+
+    update 28/8 - understand DTO structure
+
+[33mcommit 9c6393893d94543e8a7849d22336d83482d6f346[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 15:09:33 2024 +0700
+
+    update 22/8 - understand controller structure
+
+[33mcommit 5205724e3af9ebb251e2a7f46c78ec4d8ffeda8c[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 13:33:15 2024 +0700
+
+    update 28/8 - understand services structure
+
+[33mcommit f6dcd182918f85da34437b208fc1e2f50691dd70[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 10:55:58 2024 +0700
+
+    update 28/8 - understand repository structure
+
+[33mcommit 5c8a321540313c7dd336e810cba89b83aab5fe43[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 10:40:24 2024 +0700
+
+    update 28/8 - understand  entities structure
+
+[33mcommit 607aa8e7f2f752c411f9276e4b4fd9ddc548e1e4[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 09:54:32 2024 +0700
+
+    update 28/8 - understanding entities field
+
+[33mcommit 9ab22d00e88e145bc55a06e147b8c86d6ccc5243[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 09:32:17 2024 +0700
+
+    update 28/8 - understand the external structure of the spring
+
+[33mcommit 8c8cec6d27483087fbb53ec5b96a15290c43347e[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 28 07:53:36 2024 +0700
+
+    firstpush 28/8 - remove cloning
+
+[33mcommit af5191856fa17b507b3efdc6fdaebae2d09ddc26[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 27 16:03:13 2024 +0700
+
+    lastupdate 27/8 - fix bugs
+
+[33mcommit c3b3108aafea6fa573ae0b8cd8bb21810525251c[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 27 15:11:18 2024 +0700
+
+    update 27/8 - finish auditing
+
+[33mcommit 7ff4f9e602af6f6638ba2fcc255c325f0d8eedd6[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 27 14:43:25 2024 +0700
+
+    udpate 27/8  - makes the auditor aware and successful when tested on the API
+
+[33mcommit e9a1b46abd5432d512075dfea008badc9dfc79b6[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 27 10:37:21 2024 +0700
+
+    update 27/8 - create baseEntities
+
+[33mcommit d079ce5f16d476e284871fa030b825f14d19eb00[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 27 10:04:16 2024 +0700
+
+    update 27/8 - managed to carry out security well
+
+[33mcommit 3c61893b40cde54a969b41afef804543ad7fee27[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 27 09:34:18 2024 +0700
+
+    firstpush 27/8 - MASOOOKKKK SECURITY
+
+[33mcommit 6eac746e591661ec51ed25d09017a88a0a98f0c0[m
+Merge: 77f79de 982933f
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 26 15:58:23 2024 +0700
+
+    update 26/8 - fix errors before create security
+
+[33mcommit 77f79de0df6b6cf10069d65449921ba9f816e9f1[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 26 15:18:23 2024 +0700
+
+    update 26/8 - back to normal before create security config
+
+[33mcommit 982933feac1412ec47002294f735e844d319961d[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 26 15:18:23 2024 +0700
+
+    update 26/8 - solved error
+
+[33mcommit 46d01aefebf787c65e21adfc519b705987beb386[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 26 15:17:15 2024 +0700
+
+    update 26/8 - solved error
+
+[33mcommit 9c8e420427840b995adecf84ef51a25a3eb2d48c[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 26 14:45:31 2024 +0700
+
+    update 22/8 - PUSINKKKK
+
+[33mcommit fbbd76c5e60136eaf205e2a9cb906dfc6ec71be0[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 26 14:00:29 2024 +0700
+
+    update 26/8 - HANCURRRRRR
+
+[33mcommit f1bf82a1b31f449020624b531e47e4380dac459b[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 16 16:00:46 2024 +0700
+
+    update 26/8 - comeback
+
+[33mcommit 32c1de520b8164bc0770ac1b25114da9f0b27319[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Sat Aug 24 17:52:56 2024 +0700
+
+    lastpush 24/8 - error java
+
+[33mcommit 8f83d37dd6ae7d9c3f7e00c253a2ea27841ed0ba[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Sat Aug 24 17:21:10 2024 +0700
+
+    update 24/8 - create AppUserController
+
+[33mcommit 50928db17fb4586428d35cdc8a113d11131c5c7b[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Sat Aug 24 16:45:18 2024 +0700
+
+    update 24/8 - create web security config
+
+[33mcommit 8932aa317f169d16b0f721a98fec0b1f1d57f5f0[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Sat Aug 24 16:07:48 2024 +0700
+
+    update 24/8 - create password encoder
+
+[33mcommit 94ff31e078e0f2a79863286353f3dc2c3cb3cfa4[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Sat Aug 24 11:10:29 2024 +0700
+
+    firstpush 24/8 - fixing bugs
+
+[33mcommit b89b8c8fd26abf1b119586c5f28967a4e0cd9285[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 16:16:00 2024 +0700
+
+    lastpush 22/8 - create appUser Repo & Service
+
+[33mcommit 13c6d9237f9934c55fd6eab4f221eb0ae7f69eee[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 15:31:49 2024 +0700
+
+    update 22/8 - create appUser and declare variable
+
+[33mcommit 4c3cfba1b82f3edc759c09d427ab0c4b0fa9dd60[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 14:59:47 2024 +0700
+
+    update 22/8 - can successfully logged in to swagger ui
+
+[33mcommit 4d31dff35d08ca64ae472494047237cc6d989601[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 14:05:56 2024 +0700
+
+    update 22/8 - can running server with springfox
+
+[33mcommit a7f771ab340f0fc80e074604f81d1f94d9716bcd[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 12:54:53 2024 +0700
+
+    update 22/8 - update  swagger
+
+[33mcommit 48afa6493552e4fccb3e6a4685c02b8ecfd48671[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 10:22:54 2024 +0700
+
+    update 22/8 - fixing pom
+
+[33mcommit 1015d5a18cbc4942f76549b0abb29600b34b6b06[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 10:03:53 2024 +0700
+
+    update 22/8 - create swagger configuration
+
+[33mcommit 004f4ee2f3cccb6eba8a9b21265448836ce6163c[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 22 09:49:27 2024 +0700
+
+    firstpush 22/8 - lemot banget ni laptop
+
+[33mcommit 850062ef0c7161cb67cfb54692e415cdefe84090[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 21 15:24:51 2024 +0700
+
+    lastpush 21/8 - paging and sorting
+
+[33mcommit f5f75941a272032c90ca5a5eb098f3c534c57d15[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 21 15:23:36 2024 +0700
+
+    update 21/8 - finish paging and sorting
+
+[33mcommit 7ac6b818e6d28a99f805b99f13e6ebd1b5314d5b[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 21 15:11:24 2024 +0700
+
+    update 21/8 - create findByName Asc&Desc
+
+[33mcommit f78b54fb9752fce22db98e0e0dfa8d8349ffce80[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 21 14:23:08 2024 +0700
+
+    update 21/8 - first push after swich to main
+
+[33mcommit 7b3d5b8055237615b412c380108a25b2cb1873fc[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 21 10:02:24 2024 +0700
+
+    update 21/8 - finish derived query
+
+[33mcommit 4ba8503f8b903464fca9decb7b5e27afff592393[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 21 09:37:55 2024 +0700
+
+    update 21/8 - explore derived query
+
+[33mcommit 1ecd7dd67fd5c971e375d898595abb2721312b52[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 21 09:21:09 2024 +0700
+
+    firstpush 21/8 - derived query findEMail
+
+[33mcommit 09c32d791d42cd70ca88f04ff8b770b7651c639e[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 20 16:46:20 2024 +0700
+
+    lastupdate 20/8 - finish custom query
+
+[33mcommit a89b909a68d6c2c3d2df1eb51894952c5b07280c[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 20 16:41:42 2024 +0700
+
+    update 20/8 - solved findSupplier
+
+[33mcommit daec286fd9a2d0de96016f1ceaa7afe81a7c74a5[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 20 16:12:00 2024 +0700
+
+    update 20/8 - solved findCategory
+
+[33mcommit 6b3f9c5cef14bfeae924c56212d5a5a48a9d380f[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 20 15:23:22 2024 +0700
+
+    update 20/8 - create custom query ByNameLike
+
+[33mcommit 5b14b7508dca974ebe33421267ec80a0ed23e699[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 20 13:55:06 2024 +0700
+
+    update 20/8 - create custom query
+
+[33mcommit 6c13d5be623b557dcb817dffdf73a1a182e98012[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 20 13:45:48 2024 +0700
+
+    update 20/8 - little update
+
+[33mcommit d5fd10db293157355dcfa47e755072f6ccdfc36c[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 20 11:21:52 2024 +0700
+
+    firstpush 20/8 - review code before custom query
+
+[33mcommit 39a79dad075ba6ae0fe3ea45095b4bcf49f5d725[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 19 16:14:58 2024 +0700
+
+    update 19/8 - clean bugs
+
+[33mcommit 500f8dd23059d5c80864431985ed267b09eba210[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 19 16:12:46 2024 +0700
+
+    lastpush 19/8 - finish Repository, Service, Controller and DTO implementation
+
+[33mcommit ae7fbfcf4161d5cb20237f6207b4e46e6362abb9[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 19 11:39:58 2024 +0700
+
+    update 19/8 - fix bugs DTO
+
+[33mcommit aaa549a80e9bc4ba06f43e40251d894246de6cea[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 19 11:25:18 2024 +0700
+
+    update 19/8 - push before running server
+
+[33mcommit 2152c62edbccfc827cb8f665c5f16de7064faf43[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 19 11:03:54 2024 +0700
+
+    update 19/8 - finish create all controller
+
+[33mcommit d07d8443c59e36de2fd01bcc6e946fb549dc678f[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Mon Aug 19 10:07:47 2024 +0700
+
+    firstpush 19/8 - create  DTO and Controller
+
+[33mcommit 15c1a6ed9d1793ae99095c2f9fe40e477350fd6d[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 16 16:00:46 2024 +0700
+
+    lastpush 16/8 - create supplier, category repo and service
+
+[33mcommit c5a83f336cee96cad44c0fbf936e8a46f3736121[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 16 14:30:58 2024 +0700
+
+    update 16/8 - finish entity relations JPA
+
+[33mcommit e989323f04dd56f6e5b670b2b81ca9754d911d7b[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 16 11:14:34 2024 +0700
+
+    update 16/8 - understand all code after validation
+
+[33mcommit 8808b128c8ffae8feefbf64c810fe474bf72df66[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 16 09:46:32 2024 +0700
+
+    update 16/8 - finish validation product
+
+[33mcommit 8a9c11598184a5128adc168917ae353cccd87ba0[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 16 09:12:56 2024 +0700
+
+    update 16/8 - create validation error for product
+
+[33mcommit de113bf1ab7949c89dd8716934f7ce80cffe49a6[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Fri Aug 16 08:38:47 2024 +0700
+
+    firstpush 16/8 - finish CRUD in product
+
+[33mcommit 4c78a025cdfab9fc44021770fedd744d86c53bcb[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 15 15:32:44 2024 +0700
+
+    update 15/8 - switch to demoapi create CRUD product
+
+[33mcommit 3539cdb2f05308c25494d35da79cc20ebfbb2826[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 15 13:34:06 2024 +0700
+
+    update 15/8 - final twotable problem
+
+[33mcommit 0aa9bdfa611834c4ace08397367face4b74ccee2[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 15 12:13:56 2024 +0700
+
+    update 15/8 - find error of two table
+
+[33mcommit ebaebec5ba1e4e1ce069a31da01742b95ed47920[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Thu Aug 15 11:21:37 2024 +0700
+
+    update 15/8 - can show all table
+
+[33mcommit 3c63e2cb8c24064fe7a9dd150492fa18c7cb594e[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 14 16:31:06 2024 +0700
+
+    lastpush 14/8 - create table
+
+[33mcommit 2f25a535496bd8e001ed5f14937d8f688242821b[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 14 15:16:25 2024 +0700
+
+    update
+
+[33mcommit ac97473930491caa8a4b78b85c3ffaebf0cda58a[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 14 15:14:39 2024 +0700
+
+    demo-api can create table in database
+
+[33mcommit a008ae045d7341c8f377977614cb453245f0abf8[m
+Merge: d2d8405 126ce7a
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 14 09:04:52 2024 +0700
+
+    Merge branch 'main' of https://github.com/MuhammadAnbiya23/BackendJava-SpringBoot
+
+[33mcommit d2d840587153bae6d2a6c622364f69cf907a9714[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Wed Aug 14 09:02:23 2024 +0700
+
+    update 8/14
+
+[33mcommit 126ce7a188b44a5374e7dae101578af3f0252b24[m
+Author: anbiyafth <146647932+MuhammadAnbiya23@users.noreply.github.com>
+Date:   Tue Aug 13 14:39:04 2024 +0700
+
+    Update README.md
+
+[33mcommit e6022caea24c6dbdcaf91ebb5c78814ad7129b6e[m
+Author: anbiyafth <146647932+MuhammadAnbiya23@users.noreply.github.com>
+Date:   Tue Aug 13 14:37:59 2024 +0700
+
+    Create README.md
+
+[33mcommit c6079d4ff974b044bc366d1ca2daafd02c3d1657[m
+Author: MuhammadAnbiya23 <anbiya17agustus@gmail.com>
+Date:   Tue Aug 13 14:37:13 2024 +0700
+
+    first commit
